@@ -1,10 +1,12 @@
+import { GridBrackground } from "./grid-background.js";
+import { EquinoxLogo } from "./equinox-logo.js";
+
 import "./style.css";
-import gridStyles from "./grid.module.css";
 
-function GridContainer() {
-  const section = document.createElement("section");
-  section.className = gridStyles.grid;
-  return section;
-}
+const app = document.querySelector("#app");
+app.innerHTML = "";
 
-document.body.appendChild(GridContainer());
+const grid = GridBrackground();
+const logo = EquinoxLogo();
+app.appendChild(logo);
+app.appendChild(grid);

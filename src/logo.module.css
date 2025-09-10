@@ -1,0 +1,11 @@
+.logo {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 89vw;
+  max-width: 89vw;
+  z-index: 10;
+}
