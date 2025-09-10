@@ -10,15 +10,15 @@
     linear,
     left 90%,
     left top,
-    from(rgba(0, 0, 0, 1)),
-    to(rgba(0, 0, 0, 0))
+    from(#000000),
+    to(#00000000)
   );
   mask-image: gradient(
     linear,
     left 90%,
     left top,
-    from(rgba(0, 0, 0, 1)),
-    to(rgba(0, 0, 0, 0))
+    from(#000000),
+    to(#00000000)
   );
   transform: perspective(200px) rotateX(40deg) scale(2, 1) translateZ(0);
   content: "";
@@ -41,7 +41,8 @@
 
 .grid:after {
   background-position: center bottom;
-  background-size: 40px 40px;
+  background-size: 50px 50px;
   background-image: linear-gradient(to right, var(--main-color) 2px, transparent 2px),
-    linear-gradient(to bottom, var(--main-color) 1px, transparent 2px);
+    linear-gradient(to bottom, var(--main-color) 2px, transparent 2px);
+    filter: drop-shadow(0 0 4px var(--main-color)) drop-shadow(0 0 4px var(--accent-color));
 }
