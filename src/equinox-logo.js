@@ -1,10 +1,10 @@
 import styles from "./logo.module.css";
-import logoSrc from "./logo_equinox_2025.svg";
+
+import svgContent from "./logo_equinox_2025.svg?raw";
 
 export function EquinoxLogo() {
-  const logo = document.createElement("img");
-  logo.src = logoSrc;
-  logo.alt = "Equinox 2025 Logo";
-  logo.className = styles.logo;
+  const logo = document.createElement("div");
+  logo.classList.add(styles.logo);
+  logo.innerHTML = svgContent;
   return logo;
 }
