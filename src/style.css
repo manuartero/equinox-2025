@@ -13,6 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   --main-color: #48c0ee;
+  --main-highlight-color: #48faff;
   --accent-color: #e41513;
 }
 

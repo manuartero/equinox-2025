@@ -1,0 +1,55 @@
+.stickyTags {
+  position: fixed;
+  top: 32px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 100;
+}
+
+.stickyTag {
+  position: relative;
+  overflow: hidden;
+  color: var(--main-highlight-color);
+  padding: 12px 36px;
+  border-radius: 32px 0 0 32px;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+
+  box-shadow: 0 0 12px var(--main-highlight-color), 0 0 32px #48faff44,
+    0 0 2px #222 inset;
+  border: 2px solid var(--main-highlight-color);
+  border-right: none;
+  text-shadow: 0 0 8px var(--main-highlight-color),
+    0 0 16px var(--main-highlight-color), 0 0 2px #fff;
+
+  opacity: 0.8;
+  transition: box-shadow 0.3s, border-color 0.3s, color 0.3s, opacity 0.3s;
+}
+
+.stickyTag.accent {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 12px var(--accent-color), 0 0 32px #e4151344,
+    0 0 2px #222 inset;
+  color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color), 0 0 16px var(--accent-color),
+    0 0 2px #fff;
+}
+
+.stickyTag:hover {
+  opacity: 1;
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 24px var(--main-highlight-color), 0 0 48px #48faff88,
+    0 0 8px #fff;
+}
+
+.stickyTag.accent:hover {
+  box-shadow: 0 0 24px var(--accent-color), 0 0 48px #e4151388, 0 0 8px #fff;
+  border-color: #fff;
+  color: #fff;
+}
