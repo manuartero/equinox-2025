@@ -1,0 +1,56 @@
+.agendaContainer {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 5%;
+  left: 5%;
+
+  width: 80vw;
+  height: 70vh;
+
+  border-radius: 32px;
+  box-shadow: 0 0 32px var(--main-color);
+  z-index: 200;
+  gap: 32px;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.agendaColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  box-shadow: 0 0 16px var(--main-color);
+  padding: 24px;
+  min-width: 320px;
+}
+
+.agendaTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--main-color);
+  margin-bottom: 24px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.agendaItem {
+  margin-bottom: 18px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #48c0ee14;
+  box-shadow: 0 0 8px #48c0ee22;
+  font-size: 1.1rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.agendaTime {
+  font-size: 0.95rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-top: 4px;
+}
