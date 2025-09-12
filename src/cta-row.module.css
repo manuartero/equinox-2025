@@ -1,0 +1,28 @@
+/* cta-row.module.css */
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 28px;
+  width: 100vw;
+  bottom: 20%;
+  position: absolute;
+
+  /* Reserva altura para evitar “saltos” cuando aparece el 2º botón */
+  min-height: 76px; /* ajusta si cambias el tamaño del botón */
+}
+
+.animate {
+  transition: transform 380ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 380ms ease;
+}
+
+.shiftLeft {
+  transform: translateX(-26px);
+}
+
+.enterFromRight {
+  transform: translateX(42px);
+  opacity: 0;
+}

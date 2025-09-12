@@ -33,3 +33,32 @@ body {
   display: flex;
   place-items: center;
 }
+
+#app {
+  width: 100%;
+}
+
+.equi-stage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.equi-hero {
+  width: min(90vw, 1200px);
+  transform-origin: center top;
+  transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+}
+
+.equi-hero--shrink {
+  transform: translateY(-20vh) scale(0.55);
+  transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.equi-agenda-slot {
+  width: min(92vw, 1200px);
+  margin-top: 16px; 
+}

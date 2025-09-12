@@ -1,0 +1,151 @@
+:root {
+  /* Azul principal extraído del logo */
+  --tron: #46bfee;
+  /* Como RGB para sombras/glow */
+  --tron-rgb: 70, 191, 238;
+}
+
+.tron {
+  position: relative;
+  display: inline-block;
+  padding: 22px 30px;
+  margin: 40px 0;
+  color: var(--tron);
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.4s ease;
+  overflow: hidden;
+
+  /* mismo look en <a> o <button> */
+  font-family: inherit;
+}
+
+.tron:hover,
+.tron:focus-visible {
+  background: var(--tron);
+  color: #050801;
+  /* glow */
+  box-shadow: 0 0 5px rgba(var(--tron-rgb), 0.9),
+    0 0 25px rgba(var(--tron-rgb), 0.7), 0 0 50px rgba(var(--tron-rgb), 0.5),
+    0 0 200px rgba(var(--tron-rgb), 0.25);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  outline: none;
+}
+
+/* Estructura de los 4 “rayos” animados */
+.tron span {
+  position: absolute;
+  display: block;
+}
+
+/* Top */
+.tron span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--tron));
+  animation: animate1 1s linear infinite;
+}
+
+/* Right */
+.tron span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--tron));
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+/* Bottom */
+.tron span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--tron));
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+/* Left */
+.tron span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--tron));
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Tamaños opcionales */
+.sm {
+  padding: 14px 18px;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+.md {
+  padding: 22px 30px;
+  font-size: 14px;
+}
+.lg {
+  padding: 28px 36px;
+  font-size: 16px;
+}
+
+/* Keyframes */
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+/* Estado seleccionado/activo */
+.tron[data-active="1"] {
+  background: var(--tron);
+  color: #fff; /* <— diferencia con hover */
+  box-shadow: 0 0 5px rgba(var(--tron-rgb), 0.9),
+    0 0 25px rgba(var(--tron-rgb), 0.7), 0 0 50px rgba(var(--tron-rgb), 0.5),
+    0 0 200px rgba(var(--tron-rgb), 0.25);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
