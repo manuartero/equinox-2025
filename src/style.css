@@ -1,10 +1,4 @@
-@font-face {
-  font-family: "Gotham";
-  src: url("/fonts/Gotham.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+@import "./style-fonts.css";
 
 :root {
   font-family: "Gotham", system-ui, Helvetica;
@@ -60,5 +54,5 @@ body {
 
 .equi-agenda-slot {
   width: min(92vw, 1200px);
-  margin-top: 16px; 
+  margin-top: 16px;
 }
