@@ -1,8 +1,7 @@
-// equinox-logo.js
 import styles from "./logo.module.css";
 import svgContent from "./logo_equinox_2025.svg?raw";
 
-export function EquinoxLogo() {
+export function EquinoxLogo({ initialDelay = 2000, letterDelayMs = 2000, pathDelayMs = 1000, durationMs = 1000 } = {}) {
   const logo = document.createElement("div");
   logo.classList.add(styles.logo);
   logo.innerHTML = svgContent;
@@ -12,30 +11,30 @@ export function EquinoxLogo() {
 
   if (svg) {
     const letterOrder = ['E', 'Q', 'U', 'I', 'N', 'O', 'X'];
-    
+
     letterOrder.forEach((letterId, letterIndex) => {
       const letterGroup = svg.querySelector(`#${letterId}`);
       if (!letterGroup) return;
-      
+
       const paths = letterGroup.querySelectorAll("path");
-      
+
       paths.forEach((path, pathIndex) => {
         const pathLength = path.getTotalLength();
-        
+
         path.style.strokeDasharray = pathLength;
         path.style.strokeDashoffset = pathLength;
-        
-        const letterDelay = letterIndex * 500;
-        const pathDelay = pathIndex * 100;
-        const totalDelay = 300 + letterDelay + pathDelay;
-        
-        const duration = 800;
+
+        const letterDelay = letterIndex * letterDelayMs;
+        const pathDelay = pathIndex * pathDelayMs;
+        const totalDelay = initialDelay + letterDelay + pathDelay;
+
+        const duration = durationMs;
         const end = totalDelay + duration;
 
         if (end > maxEnd) {
           maxEnd = end;
         }
-        
+
         setTimeout(() => {
           path.style.transition = `stroke-dashoffset ${duration}ms ease-out`;
           path.style.strokeDashoffset = "0";
