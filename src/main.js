@@ -4,11 +4,14 @@ import { EquinoxLogo } from "./equinox-logo.js";
 import { Register } from "./register.js";
 import { GridBrackground } from "./grid-background.js";
 import { TronButton } from "./tron-button.js";
+import { playBackgroundMusic } from "./background-music.js";
 
 import "./style.css";
 
 const app = document.querySelector("#app");
 app.innerHTML = "";
+
+playBackgroundMusic();
 
 /* ----- estructura: logo + contenido central + botones ----- */
 const stage = document.createElement("div");
