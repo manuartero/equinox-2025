@@ -96,3 +96,12 @@ logo.addEventListener("equinox:logoReady", () => {
     setActive(btnRegistro);
   });
 });
+
+document.addEventListener("equinox:closeAgenda", () => {
+  contentSlot.classList.add("equi-content-slot--show");
+  requestAnimationFrame(() =>
+    contentSlot.classList.remove("equi-content-slot--show")
+  );
+  showView("register");
+  setActive(btnRegistro);
+});

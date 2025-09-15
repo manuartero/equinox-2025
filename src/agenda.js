@@ -22,8 +22,15 @@ const AGENDA= [
 ]
 
 export function Agenda() {
+  const backdrop = document.createElement("div");
+  backdrop.className = styles.agendaBackdrop;
+
   const container = document.createElement("div");
   container.className = styles.agendaContainer;
+
+  backdrop.addEventListener("click", () => {
+    document.dispatchEvent(new CustomEvent("equinox:closeAgenda"));
+  });
 
   AGENDA.forEach((day) => {
     const col = document.createElement("div");
@@ -51,6 +58,7 @@ export function Agenda() {
 
     container.appendChild(col);
   });
+  backdrop.appendChild(container);
 
-  return container;
+  return backdrop;
 }
