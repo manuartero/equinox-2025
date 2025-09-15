@@ -1,0 +1,79 @@
+:root {
+  /* Azul principal extraído del logo */
+  --tron: #46bfee;
+  /* Como RGB para sombras/glow */
+  --tron-rgb: 70, 191, 238;
+}
+
+aside {
+  position: fixed;
+  top: 50%;
+  right: 10vw;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  user-select: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+a.tron,
+button.tron {
+  position: relative;
+  display: inline-block;
+  padding: 22px 30px;
+
+  color: var(--tron);
+  background: transparent;
+  border: none;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 4px;
+
+  cursor: pointer;
+  user-select: none;
+  transition: 0.4s ease;
+  overflow: hidden;
+
+  /* mismo look en <a> o <button> */
+  font-family: inherit;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--tron);
+    color: #050801;
+    /* glow */
+    box-shadow: 0 0 5px rgba(var(--tron-rgb), 0.9),
+      0 0 25px rgba(var(--tron-rgb), 0.7), 0 0 50px rgba(var(--tron-rgb), 0.5),
+      0 0 200px rgba(var(--tron-rgb), 0.25);
+    outline: none;
+  }
+
+  /* Tamaños opcionales */
+  &.sm {
+    padding: 14px 18px;
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  &.md {
+    padding: 22px 30px;
+    font-size: 14px;
+  }
+
+  &.lg {
+    padding: 28px 36px;
+    font-size: 16px;
+  }
+}
+
+@media (width < 900px) {
+  aside {
+    display: none;
+  }
+}

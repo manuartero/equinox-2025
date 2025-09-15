@@ -1,0 +1,8 @@
+.logo {
+  position: sticky;
+  top: 100px;
+  margin: 0 auto;
+  width: 80vh;
+  max-width: 60vw;
+  z-index: 10;
+}

@@ -6,8 +6,6 @@ import { GridBrackground } from "./grid-background.js";
 import { TronButton } from "./tron-button.js";
 import { playBackgroundMusic } from "./background-music.js";
 
-import "./style.css";
-
 const app = document.querySelector("#app");
 app.innerHTML = "";
 

@@ -8,6 +8,7 @@
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  scroll-behavior: smooth;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,17 +20,28 @@
   --accent-color: #e41513;
 }
 
-body {
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  place-items: center;
+*,
+:before,
+:after {
+  box-sizing: border-box;
 }
 
-#app {
-  width: 100%;
+body {
+  margin: 0;
+  font-size: 100%;
+  overflow-y: auto;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  & > section {
+    width: min(90vw, 1100px);
+    height: 100dvh;
+    margin: 0 auto;
+  }
 }
 
 .equi-stage {

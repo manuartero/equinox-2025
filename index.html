@@ -4,13 +4,86 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="stylesheet" href="/src/logo.css" />
+  <link rel="stylesheet" href="/src/agenda.css" />
+  <link rel="stylesheet" href="/src/aside.css" />
+  <link rel="stylesheet" href="/src/ground.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Equinox 2025</title>
 </head>
 
 <body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
+  <main>
+    <a class="logo" href="#hero">
+      <img src="/logo_equinox_2025.svg" alt="equinox logo" />
+    </a>
+
+    <section id="hero"></section>
+
+    <section id="agenda" class="agenda">
+      <h1 class="title">Agenda</h1>
+      <article>
+        <div>
+          <h3>Jueves 25 de Septiembre</h3>
+          <ul>
+            <li>Welcome</li>
+            <li>Trivial Time</li>
+            <li>Ping Pong Championship</li>
+            <li>Dinner Pizza</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Viernes 26 de Septiembre</h3>
+          <ul>
+            <li>Limit to Submit Project</li>
+            <li>Final Presentation</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="awards">
+      <article>
+        <h1>Premios</h1>
+        <div>
+          <ul>
+            <li>Best Design</li>
+            <li>Best Innovation</li>
+            <li>Best Use of Technology</li>
+            <li>People's Choice</li>
+            <li>Best Overall Project</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="jury">
+      <article>
+        <h1>Jurado</h1>
+        <div>
+          <ul>
+            <li>Juan Pérez - CEO TechCorp</li>
+            <li>Ana Gómez - Lead Designer at Creativa</li>
+            <li>Carlos Ruiz - CTO InnovateX</li>
+            <li>María López - Product Manager at SoftSolutions</li>
+            <li>Luis Fernández - UX Specialist at DesignHub</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <aside id="scroll-indicator">
+    <a href="#agenda" class="tron">Agenda</a>
+    <a href="#todo" target="_blank" rel="noopener noreferrer" class="tron">Submit</a>
+    <a href="#todo" target="_blank" rel="noopener noreferrer" class="tron">Registro</a>
+    <a href="#awards" class="tron">Premios</a>
+    <a href="#jury" class="tron">Jurado</a>
+  </aside>
+
+  <!-- <footer class="ground"></footer> -->
+  <!-- <script type="module" src="/src/main.js"></script> -->
 </body>
 
 </html>
