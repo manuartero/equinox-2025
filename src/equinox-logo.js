@@ -11,18 +11,36 @@ export function EquinoxLogo() {
   let maxEnd = 0;
 
   if (svg) {
-    const paths = svg.querySelectorAll("path");
-    paths.forEach((path, i) => {
-      path.style.opacity = "0";
-      const delay = 300 + Math.random() * 1200 + i * 100;
-      const duration = 400 + Math.random() * 1200;
-      const end = delay + duration;
-      if (end > maxEnd) maxEnd = end;
+    const letterOrder = ['E', 'Q', 'U', 'I', 'N', 'O', 'X'];
+    
+    letterOrder.forEach((letterId, letterIndex) => {
+      const letterGroup = svg.querySelector(`#${letterId}`);
+      if (!letterGroup) return;
+      
+      const paths = letterGroup.querySelectorAll("path");
+      
+      paths.forEach((path, pathIndex) => {
+        const pathLength = path.getTotalLength();
+        
+        path.style.strokeDasharray = pathLength;
+        path.style.strokeDashoffset = pathLength;
+        
+        const letterDelay = letterIndex * 500;
+        const pathDelay = pathIndex * 100;
+        const totalDelay = 300 + letterDelay + pathDelay;
+        
+        const duration = 800;
+        const end = totalDelay + duration;
 
-      setTimeout(() => {
-        path.style.transition = `opacity ${duration}ms ease`;
-        path.style.opacity = "1";
-      }, delay);
+        if (end > maxEnd) {
+          maxEnd = end;
+        }
+        
+        setTimeout(() => {
+          path.style.transition = `stroke-dashoffset ${duration}ms ease-out`;
+          path.style.strokeDashoffset = "0";
+        }, totalDelay);
+      });
     });
   }
 
