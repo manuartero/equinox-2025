@@ -13,7 +13,7 @@
     align-items: center;
 
     & figure {
-      cursor: pointer;
+      cursor: crosshair;
       outline: none;
     }
 
@@ -24,7 +24,8 @@
       border-radius: 50%;
       border: 4px solid var(--main-color);
       box-shadow: 0 0 8px var(--main-color);
-      transition: border-color 0.3s, box-shadow 0.3s;
+      transition: border-color 0.3s, box-shadow 0.3s, filter 0.3s;
+      filter: grayscale(100%);
     }
 
     & figcaption {
@@ -40,8 +41,11 @@
 
     & figure:hover img,
     & figure:focus-within img {
-      border-color: #fff;
-      box-shadow: 0 0 24px var(--main-color), 0 0 0 4px #fff;
+      border-color: var(--main-color);
+      box-shadow: 0 0 8px 8px #fff, 0 0 8px var(--main-color), 0 0 0 4px #fff;
+      filter: grayscale(0%);
+      transform: scale(1.05);
+      transition: transform 0.3s;
     }
 
     & figure:hover figcaption,
