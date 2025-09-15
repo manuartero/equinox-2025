@@ -16,11 +16,8 @@ export function Register() {
     return wrap;
   };
 
-  // ⬇️ Añadimos styles.full también al Nombre
-  form.appendChild(field("Nombre", "text", "name", "Tu nombre", styles.full));
-  form.appendChild(
-    field("Email", "email", "email", "tu@correo.com", styles.full)
-  );
+  form.appendChild(field("Nombre", "text", "name", "Tu nombre"));
+  form.appendChild(field("Email", "email", "email", "tu@correo.com"));
 
   return form;
 }
