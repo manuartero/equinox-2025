@@ -1,0 +1,25 @@
+.jury {
+  & article {
+    padding: 12px;
+    border-radius: 24px;
+    box-shadow: 0 0 16px var(--main-color);
+  }
+
+  & ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+
+    & li {
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: #48c0ee14;
+      box-shadow: 0 0 8px #48c0ee22;
+
+      font-size: 1.1rem;
+      color: #ffffff;
+      font-weight: 500;
+    }
+  }
+}

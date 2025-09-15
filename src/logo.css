@@ -1,6 +1,20 @@
+@keyframes logoFadeUp {
+  0% {
+    top: 50%;
+    scale: 1;
+  }
+  100% {
+    top: 50px;
+    scale: 0.7;
+  }
+}
+
 .logo {
+  animation: logoFadeUp linear both;
+  animation-timeline: view();
+  animation-range: 100vh 180vh;
+
   position: sticky;
-  top: 100px;
   margin: 0 auto;
   width: 80vh;
   max-width: 60vw;

@@ -5,11 +5,23 @@
   --tron-rgb: 70, 191, 238;
 }
 
+@keyframes logoFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 aside {
+  animation: logoFadeIn linear both;
+  animation-timeline: view();
+  animation-range: 100vh;
+
   position: fixed;
-  top: 50%;
-  right: 10vw;
-  transform: translateY(-50%);
+  top: 40vh;
+  right: 100px;
   z-index: 10;
 
   user-select: none;
@@ -20,8 +32,7 @@ aside {
   gap: 10px;
 }
 
-a.tron,
-button.tron {
+a.tron {
   position: relative;
   display: inline-block;
   padding: 22px 30px;
@@ -72,7 +83,7 @@ button.tron {
   }
 }
 
-@media (width < 900px) {
+@media (width < 1700px) {
   aside {
     display: none;
   }

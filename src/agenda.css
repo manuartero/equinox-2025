@@ -1,39 +1,50 @@
-@keyframes textAppear {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    scale: 0.95;
-  }
-  to {
-    opacity: 1;
-    scale: 1;
-  }
-}
-
 .agenda {
-  & .title {
-    animation: textAppear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover;
-  }
-
   & article {
-    animation: fadeIn both;
-    animation-timeline: view(50% 20%);
-
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 24px;
 
-    border: 2px var(--main-color) solid;
+    padding: 12px;
+    border-radius: 24px;
+    box-shadow: 0 0 16px var(--main-color);
+  }
+
+  & .agenda-column {
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 16px var(--main-color);
+  }
+
+  & h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: 12px;
+  }
+
+  & ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    & li {
+      display: flex;
+      flex-direction: column;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: #48c0ee14;
+      box-shadow: 0 0 8px #48c0ee22;
+
+      font-size: 1.1rem;
+      color: #ffffff;
+      font-weight: 500;
+
+      & p.time {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--accent-color);
+      }
+    }
   }
 }
