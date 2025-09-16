@@ -1,4 +1,3 @@
-// Simplified FAQ functionality using native HTML details/summary
 class FAQManager {
   constructor() {
     this.faqData = null;
@@ -84,22 +83,22 @@ class FAQManager {
 
   setupEventListeners() {
     // Section accordion behavior
-    document.querySelectorAll('.faq-section').forEach(section => {
+    document.querySelectorAll('.faq-section').forEach((section) => {
       section.addEventListener('toggle', (e) => {
         if (section.open) {
           // Close all other sections when one opens
-          document.querySelectorAll('.faq-section').forEach(otherSection => {
+          document.querySelectorAll('.faq-section').forEach((otherSection) => {
             if (otherSection !== section && otherSection.open) {
               otherSection.open = false;
               // Close all questions in the closing section
-              otherSection.querySelectorAll('.faq-question').forEach(question => {
+              otherSection.querySelectorAll('.faq-question').forEach((question) => {
                 question.open = false;
               });
             }
           });
         } else {
           // Close all questions when section closes
-          section.querySelectorAll('.faq-question').forEach(question => {
+          section.querySelectorAll('.faq-question').forEach((question) => {
             question.open = false;
           });
         }
@@ -107,12 +106,12 @@ class FAQManager {
     });
 
     // Question accordion behavior within each section
-    document.querySelectorAll('.faq-question').forEach(question => {
+    document.querySelectorAll('.faq-question').forEach((question) => {
       question.addEventListener('toggle', (e) => {
         if (question.open) {
           const section = question.closest('.faq-section');
           // Close all other questions in the same section
-          section.querySelectorAll('.faq-question').forEach(otherQuestion => {
+          section.querySelectorAll('.faq-question').forEach((otherQuestion) => {
             if (otherQuestion !== question && otherQuestion.open) {
               otherQuestion.open = false;
             }
@@ -123,7 +122,6 @@ class FAQManager {
   }
 }
 
-// Initialize FAQ when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new FAQManager();
 });

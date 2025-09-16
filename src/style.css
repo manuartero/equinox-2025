@@ -1,11 +1,11 @@
-@import "./fonts.css";
-@import "./logo.css";
-@import "./agenda.css";
-@import "./awards.css";
-@import "./jury.css";
-@import "./faq.css";
-@import "./aside.css";
-@import "./ground.css";
+@import './fonts.css';
+@import './logo.css';
+@import './agenda.css';
+@import './awards.css';
+@import './jury.css';
+@import './faq.css';
+@import './aside.css';
+@import './ground.css';
 
 :root {
   font-family: 'Gotham', system-ui, Helvetica;

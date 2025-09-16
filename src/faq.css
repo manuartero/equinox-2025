@@ -69,7 +69,6 @@
     }
   }
 
-  /* Details element for sections */
   & .faq-section {
     border-radius: 16px;
     background: linear-gradient(135deg, rgba(72, 192, 238, 0.08) 0%, rgba(228, 21, 19, 0.05) 100%);
@@ -91,12 +90,14 @@
       right: 0;
       height: 2px;
       border-radius: 16px 16px 0 0;
-      background: linear-gradient(90deg,
+      background: linear-gradient(
+        90deg,
         rgba(72, 192, 238, 0) 0%,
         rgba(72, 192, 238, 0.3) 20%,
         var(--main-color) 50%,
         rgba(72, 192, 238, 0.3) 80%,
-        rgba(72, 192, 238, 0) 100%);
+        rgba(72, 192, 238, 0) 100%
+      );
       transform: scaleX(0);
       transform-origin: center;
       transition: transform 0.4s ease;
@@ -110,10 +111,7 @@
       left: -2px;
       width: 4px;
       height: 60%;
-      background: linear-gradient(to bottom,
-        transparent 0%,
-        var(--main-color) 50%,
-        transparent 100%);
+      background: linear-gradient(to bottom, transparent 0%, var(--main-color) 50%, transparent 100%);
       border-radius: 2px;
       transform: translateY(-50%) scaleY(0);
       transition: transform 0.4s ease;
@@ -129,7 +127,6 @@
       opacity: 0.8;
     }
 
-    /* Open state for details */
     &[open] {
       background: linear-gradient(135deg, rgba(72, 192, 238, 0.15) 0%, rgba(228, 21, 19, 0.08) 100%);
       box-shadow: 0 16px 40px rgba(72, 192, 238, 0.3);
@@ -137,24 +134,28 @@
 
       &::before {
         transform: scaleX(1);
-        background: linear-gradient(90deg,
+        background: linear-gradient(
+          90deg,
           rgba(72, 192, 238, 0) 0%,
           rgba(72, 192, 238, 0.5) 20%,
           var(--main-highlight-color) 50%,
           rgba(72, 192, 238, 0.5) 80%,
-          rgba(72, 192, 238, 0) 100%);
+          rgba(72, 192, 238, 0) 100%
+        );
         height: 3px;
       }
 
       &::after {
         transform: translateY(-50%) scaleY(1);
         opacity: 0.8;
-        background: linear-gradient(to bottom,
+        background: linear-gradient(
+          to bottom,
           transparent 0%,
           var(--main-highlight-color) 30%,
           var(--main-color) 50%,
           var(--main-highlight-color) 70%,
-          transparent 100%);
+          transparent 100%
+        );
         width: 4px;
       }
     }
@@ -165,7 +166,6 @@
     }
   }
 
-  /* Summary element for section headers */
   & .faq-section-header {
     display: flex;
     justify-content: space-between;
@@ -180,7 +180,6 @@
     z-index: 2;
     border-radius: 16px;
 
-    /* Hide default details marker */
     &::-webkit-details-marker {
       display: none;
     }
@@ -228,7 +227,6 @@
     padding: 10px 24px 20px 24px;
   }
 
-  /* Details element for questions */
   & .faq-question {
     margin-bottom: 12px;
     border-radius: 12px;
@@ -238,22 +236,6 @@
     position: relative;
     width: 100%;
     box-sizing: border-box;
-
-    /* &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: linear-gradient(to bottom, var(--main-color), var(--accent-color));
-      transform: scaleY(0);
-      transition: transform 0.3s ease;
-    }
-
-     &[open]::before {
-      transform: scaleY(1);
-    } */
 
     &:last-child {
       margin-bottom: 0;
@@ -265,7 +247,6 @@
     }
   }
 
-  /* Summary element for question headers */
   & .faq-question-header {
     display: flex;
     justify-content: space-between;
@@ -280,7 +261,6 @@
     position: relative;
     z-index: 1;
 
-    /* Hide default details marker */
     &::-webkit-details-marker {
       display: none;
     }
@@ -393,22 +373,33 @@
   }
 }
 
-
-/* Simplified stagger animation for sections */
 .faq .faq-section {
   animation: fadeInUp 0.4s ease-out;
   animation-fill-mode: both;
 }
 
-.faq .faq-section:nth-child(1) { animation-delay: 0.05s; }
-.faq .faq-section:nth-child(2) { animation-delay: 0.1s; }
-.faq .faq-section:nth-child(3) { animation-delay: 0.15s; }
-.faq .faq-section:nth-child(4) { animation-delay: 0.2s; }
-.faq .faq-section:nth-child(5) { animation-delay: 0.25s; }
-.faq .faq-section:nth-child(6) { animation-delay: 0.3s; }
-.faq .faq-section:nth-child(7) { animation-delay: 0.35s; }
+.faq .faq-section:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.faq .faq-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.faq .faq-section:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.faq .faq-section:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.faq .faq-section:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.faq .faq-section:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.faq .faq-section:nth-child(7) {
+  animation-delay: 0.35s;
+}
 
-/* Simplified hover effect for the entire FAQ container */
 .faq:hover {
   & .faq-section:not(:hover) {
     opacity: 0.8;
