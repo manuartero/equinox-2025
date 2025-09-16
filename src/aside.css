@@ -46,6 +46,7 @@ a.tron {
   position: relative;
   display: inline-block;
   padding: 22px 30px;
+  width: 100%;
 
   color: var(--tron);
   background: transparent;
