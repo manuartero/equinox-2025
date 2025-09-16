@@ -1,4 +1,4 @@
-.awards {
+.awards, .jury {
   --img-size: 100px;
 
   & article {
@@ -7,7 +7,7 @@
     box-shadow: 0 0 16px var(--main-color);
   }
 
-  & .award-grid {
+  & .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -42,14 +42,15 @@
     & figcaption {
       text-align: center;
       color: var(--main-color);
+      margin-top: 8px;
       pointer-events: none;
 
-      &.award-title {
+      &.title {
         margin-top: 12px;
         font-weight: bold;
       }
 
-      &.award-desc {
+      &.desc {
         opacity: 0;
         transform: translateY(-10px);
         transition:
@@ -70,8 +71,8 @@
       transition: transform 0.3s;
     }
 
-    & figure:hover figcaption.award-desc,
-    & figure:focus-within figcaption.award-desc {
+    & figure:hover figcaption.desc,
+    & figure:focus-within figcaption.desc {
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
