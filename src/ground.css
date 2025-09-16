@@ -5,23 +5,11 @@
   left: 0;
 
   &:after {
-    -webkit-mask-image: -webkit-gradient(
-      linear,
-      left 90%,
-      left top,
-      from(#000000),
-      to(#00000000)
-    );
-    mask-image: gradient(
-      linear,
-      left 90%,
-      left top,
-      from(#000000),
-      to(#00000000)
-    );
+    -webkit-mask-image: -webkit-gradient(linear, left 90%, left top, from(#000000), to(#00000000));
+    mask-image: gradient(linear, left 90%, left top, from(#000000), to(#00000000));
     transform: perspective(200px) rotateX(40deg) scale(2, 1) translateZ(0);
 
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     bottom: 0;
@@ -42,13 +30,9 @@
 
     background-position: center bottom;
     background-size: 50px 50px;
-    background-image: linear-gradient(
-        to right,
-        var(--main-color) 2px,
-        transparent 2px
-      ),
+    background-image:
+      linear-gradient(to right, var(--main-color) 2px, transparent 2px),
       linear-gradient(to bottom, var(--main-color) 2px, transparent 2px);
-    filter: drop-shadow(0 0 4px var(--main-color))
-      drop-shadow(0 0 4px var(--accent-color));
+    filter: drop-shadow(0 0 4px var(--main-color)) drop-shadow(0 0 4px var(--accent-color));
   }
 }

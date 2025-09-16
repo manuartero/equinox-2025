@@ -1,13 +1,13 @@
-@import "./fonts.css";
-@import "./logo.css";
-@import "./agenda.css";
-@import "./awards.css";
-@import "./jury.css";
-@import "./aside.css";
-@import "./ground.css";
+@import './fonts.css';
+@import './logo.css';
+@import './agenda.css';
+@import './awards.css';
+@import './jury.css';
+@import './aside.css';
+@import './ground.css';
 
 :root {
-  font-family: "Gotham", system-ui, Helvetica;
+  font-family: 'Gotham', system-ui, Helvetica;
   line-height: 1.5;
   font-weight: 400;
 
@@ -65,8 +65,7 @@ main {
 @supports not (animation-timeline: view()) {
   body {
     overflow-y: hidden;
-    animation: waitLogo var(--logo-animation-duration) forwards
-      var(--logo-animation-duration);
+    animation: waitLogo var(--logo-animation-duration) forwards var(--logo-animation-duration);
   }
 }
 
