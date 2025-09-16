@@ -1,25 +1,81 @@
 .awards {
+  --IMG_SIZE: 100px;
+
   & article {
-    padding: 12px;
+    padding: 36px 12px 12px;
     border-radius: 24px;
     box-shadow: 0 0 16px var(--main-color);
   }
 
-  & ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  & .award-grid {
+    /* 3 columns, 2 rows */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
 
-    & li {
-      padding: 12px 18px;
-      border-radius: 12px;
-      background: #48c0ee14;
-      box-shadow: 0 0 8px #48c0ee22;
+    gap: 24px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 16px;
 
-      font-size: 1.1rem;
-      color: #ffffff;
-      font-weight: 500;
+    & figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: crosshair;
+      outline: none;
+    }
+
+    & img {
+      width: var(--IMG_SIZE);
+      height: var(--IMG_SIZE);
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--main-color);
+      box-shadow: 0 0 8px var(--main-color);
+      transition:
+        border-color 0.3s,
+        box-shadow 0.3s,
+        filter 0.3s;
+      filter: grayscale(100%);
+    }
+
+    & figcaption {
+      text-align: center;
+      color: var(--main-color);
+      pointer-events: none;
+
+      &.award-title {
+        margin-top: 12px;
+        font-weight: bold;
+      }
+
+      &.award-desc {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition:
+          opacity 0.3s,
+          transform 0.3s;
+      }
+    }
+
+    & figure:hover img,
+    & figure:focus-within img {
+      border-color: var(--main-color);
+      box-shadow:
+        0 0 8px 8px #fff,
+        0 0 8px var(--main-color),
+        0 0 0 4px #fff;
+      filter: grayscale(0%);
+      transform: scale(1.05);
+      transition: transform 0.3s;
+    }
+
+    & figure:hover figcaption.award-desc,
+    & figure:focus-within figcaption.award-desc {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
     }
   }
 }
