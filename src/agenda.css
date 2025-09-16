@@ -45,6 +45,11 @@
         font-size: 0.95rem;
         color: var(--accent-color);
       }
+
+      &.highlight {
+        font-weight: 700;
+        border: 2px solid var(--accent-color);
+      }
     }
   }
 }
