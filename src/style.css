@@ -3,6 +3,7 @@
 @import './agenda.css';
 @import './awards.css';
 @import './jury.css';
+@import './faq.css';
 @import './aside.css';
 @import './ground.css';
 
@@ -51,7 +52,10 @@ main {
     width: min(90vw, 1200px);
     height: 100dvh;
     margin: 0 auto;
-    scroll-margin-top: 40vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
