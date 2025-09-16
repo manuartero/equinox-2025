@@ -1,0 +1,93 @@
+{
+  "faqs": [
+    {
+      "title": "Sobre el evento",
+      "questions": [
+        {
+          "question": "¿Qué es el Equinox?",
+          "answer": "Es un Hackathon de 24 horas del CDO que se celebrará los días 25 y 26 de septiembre. Durante este tiempo, puedes participar individualmente o en equipo (de hasta 5 personas) trabajarán en un proyecto innovador, que presentarán al jurado y a sus compañeros."
+        },
+        {
+          "question": "¿Qué tipo de ideas se pueden desarrollar?",
+          "answer": "El Equinox tiene una temática libre, se puede presentar cualquier idea. Sin embargo existen ciertas categorías con temáticas especiales."
+        },
+        {
+          "question": "¿Quién puede participar?",
+          "answer": "Está dirigido a todo el personal interno que forma los equipos de CDO. Todos los perfiles implicados en el desarrollo de un producto/servicio pueden participar: TPM, PGM, UX, DEV, QA, DEVOPS, OP, etc."
+        },
+        {
+          "question": "¿Dónde se celebrará el evento?",
+          "answer": "Se puede participar tanto en modalidad online como presencial. Aquellos que decidan participar de forma presencial desde nuestras oficinas, que posiblemente sea la opción más divertida, tendrán a su disposición pizzas y bebidas para cenar y poder resistir la noche."
+        }
+      ]
+    },
+    {
+      "title": "Registro",
+      "questions": [
+        {
+          "question": "¿Cómo me inscribo?",
+          "answer": "Te puedes inscribir desde la web oficial del evento o haciendo uso del siguiente formulario."
+        },
+        {
+          "question": "¿Cuál es la fecha límite de inscripción?",
+          "answer": "El formulario de registro estará disponible hasta el 22 de septiembre a las 23:00h. Es importante rellenarlo para participar en las actividades presenciales, ya que a partir de este formulario gestionaremos los accesos y logística para actividades presenciales. No obstante siempre será posible que presentes tu proyecto de forma online."
+        },
+        {
+          "question": "¿Qué pasa si se superan las plazas disponibles?",
+          "answer": "En el caso de superar los aforos para las actividades presenciales, se priorizará según el orden de registro a las mismas."
+        }
+      ]
+    },
+    {
+      "title": "Equipos",
+      "questions": [
+        {
+          "question": "¿Cuántas personas pueden formar un equipo?",
+          "answer": "Se puede participar de forma individual o por equipos. Máximo 5 personas por equipo."
+        },
+        {
+          "question": "¿Puedo participar si no tengo equipo?",
+          "answer": "¡Por supuesto! Puedes participar de forma individual o si no tienes equipo puedes comentar en el canal de Teams para encontrar compañeros en la misma situación y crear un equipo con ellos."
+        }
+      ]
+    },
+    {
+      "title": "Proyectos y entregas",
+      "questions": [
+        {
+          "question": "¿Qué tipo de proyectos se pueden presentar?",
+          "answer": "Cualquier producto o servicio innovador que pueda desarrollarse en 24h."
+        },
+        {
+          "question": "¿Dónde envío mi proyecto?",
+          "answer": "Puedes enviar tu proyecto desde la web oficial del evento o haciendo uso del siguiente formulario."
+        },
+        {
+          "question": "¿Cuál es la hora límite para enviar los proyectos?",
+          "answer": "El plazo de entrega cierra el 26 de septiembre a las 12h (horario Madrid)."
+        },
+        {
+          "question": "¿Cuánto tiempo tenemos para presentar nuestro proyecto?",
+          "answer": "Cada equipo dispondrá de 5 minutos para su presentación, una presentación en la que se ha de mostrar el producto/servicio funcionando, prohibido presentaciones basadas en PPT sin mostrar el servicio en funcionamiento."
+        }
+      ]
+    },
+    {
+      "title": "Logística",
+      "questions": [
+        {
+          "question": "¿Qué necesito llevar?",
+          "answer": "Tu ordenador portátil, cargador y todo lo que necesites para trabajar cómodo durante 24 horas."
+        },
+        {
+          "question": "¿Habrá comida y bebida?",
+          "answer": "Sí, debes indicarnos en el formulario tu participación en la cena, así como si tienes alguna intolerancia alimentaria."
+        },
+        {
+          "question": "¿Habrá un canal de comunicación oficial?",
+          "answer": "Sí, puedes unirte al equipo oficial de Teams del evento."
+        }
+      ]
+    }
+  ]
+}
