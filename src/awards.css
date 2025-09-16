@@ -1,5 +1,5 @@
 .awards {
-  --IMG_SIZE: 100px;
+  --img-size: 100px;
 
   & article {
     padding: 36px 12px 12px;
@@ -8,7 +8,6 @@
   }
 
   & .award-grid {
-    /* 3 columns, 2 rows */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -27,8 +26,8 @@
     }
 
     & img {
-      width: var(--IMG_SIZE);
-      height: var(--IMG_SIZE);
+      width: var(--img-size);
+      height: var(--img-size);
       object-fit: cover;
       border-radius: 50%;
       border: 4px solid var(--main-color);
