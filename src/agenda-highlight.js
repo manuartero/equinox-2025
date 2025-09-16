@@ -1,31 +1,60 @@
-const interval = setInterval(() => {
-  const now = new Date();
-  const currentTime = now.getHours() * 60 + now.getMinutes();
-  document.querySelectorAll('.agenda .highlight').forEach((el) => el.classList.remove('highlight'));
-  document.querySelectorAll('.agenda .agenda-column').forEach((column) => {
-    const day = column.dataset.day;
-    if (!day) return;
-    const today = now.toISOString().split('T')[0];
-    if (day !== today) return;
-    column.querySelectorAll('.time').forEach((timeElement) => {
-      const startTimeParts = timeElement.dataset.startTime.split(':');
-      const timeInMinutes = parseInt(startTimeParts[0], 10) * 60 + parseInt(startTimeParts[1], 10);
-      const endTimeData = timeElement.dataset.endTime;
-      let endTimeInMinutes;
-      if (endTimeData) {
-        const endTimeParts = endTimeData.split(':');
-        endTimeInMinutes = parseInt(endTimeParts[0], 10) * 60 + parseInt(endTimeParts[1], 10);
-      } else {
-        endTimeInMinutes = timeInMinutes + 30; // Default duration of 30 minutes if not specified
-      }
-      const startTime = timeInMinutes;
-      const endTime = endTimeInMinutes;
-      if (currentTime >= startTime && currentTime < endTime) {
-        timeElement.parentElement?.classList.add('highlight');
-      } else {
-        timeElement.parentElement?.classList.remove('highlight');
-      }
+// local testing
+const now = new Date();
+
+// Fake current date for testing
+// data-day="2025-09-25">
+// data-start-time="17:30">17:30</p>
+// const now = new Date('2025-09-25T17:30:00');
+
+function parseTimeToMinutes(timeStr) {
+  const [hours, minutes] = timeStr.split(':').map(Number);
+  return hours * 60 + minutes;
+}
+
+function getEndTimeInMinutes(timeElement, startTimeInMinutes) {
+  const endTimeData = timeElement.dataset.endTime;
+  if (endTimeData) {
+    return parseTimeToMinutes(endTimeData);
+  }
+  return startTimeInMinutes + 30; // Default duration
+}
+
+function isCurrentSlot(currentTime, startTime, endTime) {
+  return currentTime >= startTime && currentTime < endTime;
+}
+
+function highlightAgendaSlot(timeElement, highlight) {
+  if (highlight) {
+    timeElement.parentElement?.classList.add('highlight');
+  } else {
+    timeElement.parentElement?.classList.remove('highlight');
+  }
+}
+
+function activateAgendaHighlighting() {
+  const interval = setInterval(() => {
+    const currentTime = now.getHours() * 60 + now.getMinutes();
+    document.querySelectorAll('.agenda .highlight').forEach((el) => el.classList.remove('highlight'));
+    document.querySelectorAll('.agenda .agenda-column').forEach((column) => {
+      const day = column.dataset.day;
+      if (!day) return;
+
+      const today = now.toISOString().split('T')[0];
+      if (day !== today) return;
+
+      column.querySelectorAll('.time').forEach((timeElement) => {
+        const startTime = parseTimeToMinutes(timeElement.dataset.startTime);
+        const endTime = getEndTimeInMinutes(timeElement, startTime);
+
+        const highlight = isCurrentSlot(currentTime, startTime, endTime);
+
+        highlightAgendaSlot(timeElement, highlight);
+      });
     });
-  });
-}, 60_000);
-window.addEventListener('unload', () => clearInterval(interval));
+  }, 60_000);
+
+  window.addEventListener('beforeunload', () => clearInterval(interval));
+  return interval;
+}
+
+activateAgendaHighlighting();
