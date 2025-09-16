@@ -7,7 +7,7 @@
   &:after {
     -webkit-mask-image: -webkit-gradient(linear, left 90%, left top, from(#000000), to(#00000000));
     mask-image: gradient(linear, left 90%, left top, from(#000000), to(#00000000));
-    transform: perspective(200px) rotateX(40deg) scale(2, 1) translateZ(0);
+    transform: perspective(200px) rotateX(40deg) scale(2, 1);
 
     content: '';
     display: block;
@@ -33,6 +33,49 @@
     background-image:
       linear-gradient(to right, var(--main-color) 2px, transparent 2px),
       linear-gradient(to bottom, var(--main-color) 2px, transparent 2px);
-    filter: drop-shadow(0 0 4px var(--main-color)) drop-shadow(0 0 4px var(--accent-color));
+    filter: drop-shadow(0 0 2px var(--main-color)) drop-shadow(0 0 2px var(--accent-color));
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .ground {
+    animation: groundScrollReveal linear;
+    animation-timeline: scroll();
+
+    &:after {
+      animation: gridScrollAnimation linear;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+
+@keyframes groundScrollReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  30%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    bottom: 0;
+  }
+}
+
+@keyframes gridScrollAnimation {
+  0% {
+    background-size: 50px 50px;
+  }
+  25% {
+    background-size: 40px 40px;
+  }
+  50% {
+    background-size: 35px 35px;
+  }
+  75% {
+    background-size: 30px 30px;
+  }
+  100% {
+    background-size: 25px 25px;
   }
 }
