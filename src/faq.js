@@ -12,7 +12,7 @@ class FAQManager {
 
   async loadFAQData() {
     try {
-      const response = await fetch('/faqs.json');
+      const response = await fetch('/data/faqs.json');
       this.faqData = await response.json();
     } catch (error) {
       console.error('Error loading FAQ data:', error);
