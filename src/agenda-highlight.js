@@ -18,9 +18,9 @@ const interval = setInterval(() => {
       } else {
         endTimeInMinutes = timeInMinutes + 30; // Default duration of 30 minutes if not specified
       }
-      const startTime = timeInMinutes;
-      const endTime = endTimeInMinutes;
-      if (currentTime >= startTime && currentTime < endTime) {
+      
+      
+      if (currentTime >= timeInMinutes && currentTime < endTimeInMinutes) {
         timeElement.parentElement?.classList.add('highlight');
       } else {
         timeElement.parentElement?.classList.remove('highlight');
