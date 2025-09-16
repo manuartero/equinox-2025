@@ -1,4 +1,10 @@
-@import "./style-fonts.css";
+@import "./fonts.css";
+@import "./logo.css";
+@import "./agenda.css";
+@import "./awards.css";
+@import "./jury.css";
+@import "./aside.css";
+@import "./ground.css";
 
 :root {
   font-family: "Gotham", system-ui, Helvetica;
@@ -8,6 +14,7 @@
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  scroll-behavior: smooth;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,42 +24,72 @@
   --main-color: #48c0ee;
   --main-highlight-color: #48faff;
   --accent-color: #e41513;
+
+  --logo-animation-duration: 5s;
+}
+
+*,
+:before,
+:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  place-items: center;
+  font-size: 100%;
+  overflow-y: auto;
 }
 
-#app {
-  width: 100%;
-}
-
-.equi-stage {
-  min-height: 100vh;
+main {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
+  & > section {
+    width: min(90vw, 1200px);
+    height: 100dvh;
+    margin: 0 auto;
+    scroll-margin-top: 40vh;
+  }
 }
 
-.equi-hero {
-  width: min(90vw, 1200px);
-  transform-origin: center top;
-  transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);
-  will-change: transform;
+@supports (animation-timeline: view()) {
+  main > section > article {
+    animation: sectionContentFadeIn both;
+    animation-timeline: view();
+  }
 }
 
-.equi-hero--shrink {
-  transform: translateY(-20vh) scale(0.55);
-  transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);
+@supports not (animation-timeline: view()) {
+  body {
+    overflow-y: hidden;
+    animation: waitLogo var(--logo-animation-duration) forwards
+      var(--logo-animation-duration);
+  }
 }
 
-.equi-agenda-slot {
-  width: min(92vw, 1200px);
-  margin-top: 16px;
+@keyframes waitLogo {
+  0% {
+    overflow-y: hidden;
+  }
+  100% {
+    overflow-y: auto;
+  }
+}
+
+@keyframes sectionContentFadeIn {
+  0% {
+    opacity: 0;
+    scale: 0.7;
+  }
+  50% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.7;
+  }
 }

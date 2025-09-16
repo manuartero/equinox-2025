@@ -1,53 +1,34 @@
-import styles from "./logo.module.css";
-import svgContent from "./logo_equinox_2025.svg?raw";
+const letterDelayMs = 500;
+const pathDelayMs = 100;
+const durationMs = 800;
 
-export function EquinoxLogo({ initialDelay = 2000, letterDelayMs = 2000, pathDelayMs = 1000, durationMs = 1000 } = {}) {
-  const logo = document.createElement("div");
-  logo.classList.add(styles.logo);
-  logo.innerHTML = svgContent;
+const letterOrder = ['E', 'Q', 'U', 'I', 'N', 'O', 'X'];
+const svg = document.querySelector("svg");
+const logo = document.querySelector('.logo');
 
-  const svg = logo.querySelector("svg");
-  let maxEnd = 0;
+const currentPath = window.location.pathname;
+const allSections = [...document.querySelectorAll('section')];
+const availableSections = allSections.map(section => section.id);
 
-  if (svg) {
-    const letterOrder = ['E', 'Q', 'U', 'I', 'N', 'O', 'X'];
+letterOrder.forEach((letterId, letterIndex) => {
+  const letterGroup = svg.querySelector(`#${letterId}`);
+  if (!letterGroup) return;
 
-    letterOrder.forEach((letterId, letterIndex) => {
-      const letterGroup = svg.querySelector(`#${letterId}`);
-      if (!letterGroup) return;
+  const paths = letterGroup.querySelectorAll("path");
 
-      const paths = letterGroup.querySelectorAll("path");
+  paths.forEach((path, pathIndex) => {
+    const pathLength = path.getTotalLength();
 
-      paths.forEach((path, pathIndex) => {
-        const pathLength = path.getTotalLength();
+    path.style.strokeDasharray = pathLength;
+    path.style.strokeDashoffset = pathLength;
 
-        path.style.strokeDasharray = pathLength;
-        path.style.strokeDashoffset = pathLength;
+    const letterDelay = letterIndex * letterDelayMs;
+    const pathDelay = pathIndex * pathDelayMs;
+    const totalDelay = letterDelay + pathDelay;
 
-        const letterDelay = letterIndex * letterDelayMs;
-        const pathDelay = pathIndex * pathDelayMs;
-        const totalDelay = initialDelay + letterDelay + pathDelay;
-
-        const duration = durationMs;
-        const end = totalDelay + duration;
-
-        if (end > maxEnd) {
-          maxEnd = end;
-        }
-
-        setTimeout(() => {
-          path.style.transition = `stroke-dashoffset ${duration}ms ease-out`;
-          path.style.strokeDashoffset = "0";
-        }, totalDelay);
-      });
-    });
-  }
-
-  // Notifica fin de animación (+ pequeño buffer)
-  const notify = () =>
-    logo.dispatchEvent(new CustomEvent("equinox:logoReady", { bubbles: true }));
-
-  setTimeout(notify, (maxEnd || 0) + 60);
-
-  return logo;
-}
+    setTimeout(() => {
+      path.style.transition = `stroke-dashoffset ${durationMs}ms ease-out`;
+      path.style.strokeDashoffset = "0";
+    }, totalDelay);
+  });
+});
