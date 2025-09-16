@@ -4,29 +4,31 @@ const durationMs = 800;
 
 const letterOrder = ['E', 'Q', 'U', 'I', 'N', 'O', 'X'];
 const svg = document.querySelector("svg");
+const logo = document.querySelector('.logo');
 
-if (svg) {
-  letterOrder.forEach((letterId, letterIndex) => {
-    const letterGroup = svg.querySelector(`#${letterId}`);
-    if (!letterGroup) return;
+const currentPath = window.location.pathname;
+const allSections = [...document.querySelectorAll('section')];
+const availableSections = allSections.map(section => section.id);
 
-    const paths = letterGroup.querySelectorAll("path");
+letterOrder.forEach((letterId, letterIndex) => {
+  const letterGroup = svg.querySelector(`#${letterId}`);
+  if (!letterGroup) return;
 
-    paths.forEach((path, pathIndex) => {
-      const pathLength = path.getTotalLength();
-      console.log(letterId, {pathLength})
+  const paths = letterGroup.querySelectorAll("path");
 
-      path.style.strokeDasharray = pathLength;
-      path.style.strokeDashoffset = pathLength;
+  paths.forEach((path, pathIndex) => {
+    const pathLength = path.getTotalLength();
 
-      const letterDelay = letterIndex * letterDelayMs;
-      const pathDelay = pathIndex * pathDelayMs;
-      const totalDelay = letterDelay + pathDelay;
+    path.style.strokeDasharray = pathLength;
+    path.style.strokeDashoffset = pathLength;
 
-      setTimeout(() => {
-        path.style.transition = `stroke-dashoffset ${durationMs}ms ease-out`;
-        path.style.strokeDashoffset = "0";
-      }, totalDelay);
-    });
+    const letterDelay = letterIndex * letterDelayMs;
+    const pathDelay = pathIndex * pathDelayMs;
+    const totalDelay = letterDelay + pathDelay;
+
+    setTimeout(() => {
+      path.style.transition = `stroke-dashoffset ${durationMs}ms ease-out`;
+      path.style.strokeDashoffset = "0";
+    }, totalDelay);
   });
-}
+});

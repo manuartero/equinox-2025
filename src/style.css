@@ -24,6 +24,8 @@
   --main-color: #48c0ee;
   --main-highlight-color: #48faff;
   --accent-color: #e41513;
+
+  --logo-animation-duration: 5s;
 }
 
 *,
@@ -50,21 +52,30 @@ main {
     height: 100dvh;
     margin: 0 auto;
     scroll-margin-top: 40vh;
+  }
+}
 
-    & > article {
-      animation: sectionContentFadeIn both;
-      animation-timeline: view();
-    }
+@supports (animation-timeline: view()) {
+  main > section > article {
+    animation: sectionContentFadeIn both;
+    animation-timeline: view();
+  }
+}
 
-    & > h1 {
-      animation: textAppear both;
-      animation-timeline: view(50% auto);
-      animation-range: entry 20% cover 100vh;
+@supports not (animation-timeline: view()) {
+  body {
+    overflow-y: hidden;
+    animation: waitLogo var(--logo-animation-duration) forwards
+      var(--logo-animation-duration);
+  }
+}
 
-      font-size: 2rem;
-      margin-left: 24px;
-      margin-bottom: 24px;
-    }
+@keyframes waitLogo {
+  0% {
+    overflow-y: hidden;
+  }
+  100% {
+    overflow-y: auto;
   }
 }
 
@@ -80,19 +91,5 @@ main {
   100% {
     opacity: 0;
     scale: 0.7;
-  }
-}
-
-@keyframes sectionTextAppear {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  90% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
   }
 }

@@ -14,11 +14,21 @@
   }
 }
 
-aside {
-  animation: logoFadeIn linear both;
-  animation-timeline: view();
-  animation-range: 100vh;
+@supports (animation-timeline: view()) {
+  aside {
+    animation: logoFadeIn linear both;
+    animation-timeline: view();
+    animation-range: 100vh;
+  }
+}
 
+@supports not (animation-timeline: view()) {
+  aside {
+    animation: logoFadeIn 1s linear both var(--logo-animation-duration);
+  }
+}
+
+aside {
   position: fixed;
   top: 40vh;
   right: 100px;

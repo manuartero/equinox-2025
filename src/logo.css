@@ -10,13 +10,25 @@
 }
 
 .logo {
-  animation: logoFadeUp linear both;
-  animation-timeline: view();
-  animation-range: 100vh 180vh;
-
   position: sticky;
+  top: 50%;
   margin: 0 auto;
+
+  z-index: 10;
   width: 80vh;
   max-width: 60vw;
-  z-index: 10;
+}
+
+@supports (animation-timeline: view()) {
+  .logo {
+    animation: logoFadeUp linear both;
+    animation-timeline: view();
+    animation-range: 100vh 180vh;
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .logo {
+    animation: logoFadeUp 1s linear forwards var(--logo-animation-duration);
+  }
 }
