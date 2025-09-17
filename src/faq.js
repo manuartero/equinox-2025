@@ -1,22 +1,13 @@
+import FAQData from './faqs.json' assert { type: 'json' };
 class FAQManager {
   constructor() {
-    this.faqData = null;
+    this.faqData = FAQData;
     this.init();
   }
 
   async init() {
-    await this.loadFAQData();
     this.renderFAQ();
     this.setupEventListeners();
-  }
-
-  async loadFAQData() {
-    try {
-      const response = await fetch('/data/faqs.json');
-      this.faqData = await response.json();
-    } catch (error) {
-      console.error('Error loading FAQ data:', error);
-    }
   }
 
   renderFAQ() {
@@ -72,7 +63,7 @@ class FAQManager {
     const answerDiv = document.createElement('div');
     answerDiv.className = 'faq-answer';
     answerDiv.innerHTML = `
-      <p class="faq-answer-text">${item.answer}</p>
+      <p class="faq-answer-text">${this.parseMarkdownLinks(item.answer)}</p>
     `;
 
     questionDetails.appendChild(questionSummary);
@@ -81,10 +72,19 @@ class FAQManager {
     return questionDetails;
   }
 
+  parseMarkdownLinks(text) {
+    // Regex to match markdown links [text](url)
+    const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+
+    return text.replace(markdownLinkRegex, (_, linkText, url) => {
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="faq-link">${linkText}</a>`;
+    });
+  }
+
   setupEventListeners() {
     // Section accordion behavior
     document.querySelectorAll('.faq-section').forEach((section) => {
-      section.addEventListener('toggle', (e) => {
+      section.addEventListener('toggle', () => {
         if (section.open) {
           // Close all other sections when one opens
           document.querySelectorAll('.faq-section').forEach((otherSection) => {
@@ -107,7 +107,7 @@ class FAQManager {
 
     // Question accordion behavior within each section
     document.querySelectorAll('.faq-question').forEach((question) => {
-      question.addEventListener('toggle', (e) => {
+      question.addEventListener('toggle', () => {
         if (question.open) {
           const section = question.closest('.faq-section');
           // Close all other questions in the same section

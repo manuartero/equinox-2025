@@ -26,7 +26,7 @@
       "questions": [
         {
           "question": "¿Cómo me inscribo?",
-          "answer": "Te puedes inscribir desde la web oficial del evento o haciendo uso del siguiente formulario."
+          "answer": "Te puedes inscribir desde la web oficial del evento o haciendo uso del siguiente [formulario](https://forms.office.com/e/8iMg6c9uDY)."
         },
         {
           "question": "¿Cuál es la fecha límite de inscripción?",
@@ -47,7 +47,7 @@
         },
         {
           "question": "¿Puedo participar si no tengo equipo?",
-          "answer": "¡Por supuesto! Puedes participar de forma individual o si no tienes equipo puedes comentar en el canal de Teams para encontrar compañeros en la misma situación y crear un equipo con ellos."
+          "answer": "¡Por supuesto! Puedes participar de forma individual o si no tienes equipo puedes comentar en el [canal de Teams](https://teams.microsoft.com/l/channel/19%3A70808c87c5074682ab31d16d42cd78b0%40thread.tacv2/Encuentra%20tu%20Equipo?groupId=5150080f-d278-407c-9654-42f1238e9d4a&tenantId=9744600e-3e04-492e-baa1-25ec245c6f10) para encontrar compañeros en la misma situación y crear un equipo con ellos."
         }
       ]
     },
@@ -60,7 +60,7 @@
         },
         {
           "question": "¿Dónde envío mi proyecto?",
-          "answer": "Puedes enviar tu proyecto desde la web oficial del evento o haciendo uso del siguiente formulario."
+          "answer": "Puedes enviar tu proyecto desde la web oficial del evento o haciendo uso del siguiente [formulario](https://forms.office.com/e/k2qZ23JZBE)."
         },
         {
           "question": "¿Cuál es la hora límite para enviar los proyectos?",
@@ -81,11 +81,11 @@
         },
         {
           "question": "¿Habrá comida y bebida?",
-          "answer": "Sí, debes indicarnos en el formulario tu participación en la cena, así como si tienes alguna intolerancia alimentaria."
+          "answer": "Sí, debes indicarnos en el [formulario](https://forms.office.com/e/8iMg6c9uDY) tu participación en la cena, así como si tienes alguna intolerancia alimentaria."
         },
         {
           "question": "¿Habrá un canal de comunicación oficial?",
-          "answer": "Sí, puedes unirte al equipo oficial de Teams del evento."
+          "answer": "Sí, puedes unirte al [equipo oficial de Teams](https://teams.microsoft.com/l/channel/19%3Ax0tmUp7pLCrOpioJW9JLZ5bRxqzMP01GXyfCcCzh1P41%40thread.tacv2/General?groupId=5150080f-d278-407c-9654-42f1238e9d4a&tenantId=9744600e-3e04-492e-baa1-25ec245c6f10) del evento."
         }
       ]
     }
