@@ -1,0 +1,189 @@
+#hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 25vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+.scroll-arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--main-color), var(--main-highlight-color));
+  box-shadow:
+    0 0 30px rgba(72, 192, 238, 0.5),
+    inset 0 2px 10px rgba(255, 255, 255, 0.1);
+  animation: pulse-glow 2s ease-in-out infinite, bounce 2s ease-in-out infinite;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--main-color), var(--accent-color), var(--main-color));
+    z-index: -1;
+    opacity: 0.3;
+    animation: rotate 4s linear infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  }
+
+  span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: arrow-bounce 1.5s ease-in-out infinite;
+    z-index: 2;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow:
+      0 0 40px rgba(72, 192, 238, 0.7),
+      inset 0 2px 10px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.scroll-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--main-color);
+  text-align: center;
+  margin: 0;
+  opacity: 0.8;
+  animation: text-glow 3s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(72, 192, 238, 0.3);
+}
+
+/* Keyframe animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 30px rgba(72, 192, 238, 0.5),
+      inset 0 2px 10px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 50px rgba(72, 192, 238, 0.8),
+      inset 0 2px 10px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes arrow-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(72, 192, 238, 0.3);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(72, 192, 238, 0.6);
+  }
+}
+
+/* Hide scroll indicator when scrolling starts */
+@supports (animation-timeline: view()) {
+  .scroll-indicator {
+    animation: fadeOut linear both;
+    animation-timeline: view();
+    animation-range: 0vh 50vh;
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .scroll-indicator {
+    animation: fadeOut 1s linear forwards var(--logo-animation-duration);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+    pointer-events: none;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 10vh;
+  }
+
+  .scroll-arrow {
+    width: 50px;
+    height: 50px;
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  .scroll-text {
+    font-size: 0.8rem;
+  }
+}
