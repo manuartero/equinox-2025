@@ -22,7 +22,7 @@ class ScrollIndicator {
 
       scrollIndicator.setAttribute('tabindex', '0');
       scrollIndicator.setAttribute('role', 'button');
-      scrollIndicator.setAttribute('aria-label', 'Hacer scroll hacia el contenido');
+      scrollIndicator.setAttribute('aria-label', 'Scroll to content');
     }
   }
 
