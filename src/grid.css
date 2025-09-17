@@ -1,4 +1,5 @@
-.awards, .jury {
+.awards,
+.jury {
   --img-size: 100px;
 
   & article {
