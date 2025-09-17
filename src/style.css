@@ -58,6 +58,12 @@ main {
   }
 }
 
+a {
+  color: var(--main-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @supports (animation-timeline: view()) {
   main > section > article {
     animation: sectionContentFadeIn both;
