@@ -1,4 +1,7 @@
-const interval = setInterval(() => {
+/** @type {NodeJS.Timeout} */
+var agendaInterval;
+
+function updateAgendaHighlights() {
   const now = new Date();
   const currentTime = now.getHours() * 60 + now.getMinutes();
   document.querySelectorAll('.agenda .highlight').forEach((el) => el.classList.remove('highlight'));
@@ -18,8 +21,7 @@ const interval = setInterval(() => {
       } else {
         endTimeInMinutes = timeInMinutes + 30; // Default duration of 30 minutes if not specified
       }
-      
-      
+
       if (currentTime >= timeInMinutes && currentTime < endTimeInMinutes) {
         timeElement.parentElement?.classList.add('highlight');
       } else {
@@ -27,5 +29,20 @@ const interval = setInterval(() => {
       }
     });
   });
-}, 60_000);
-window.addEventListener('unload', () => clearInterval(interval));
+}
+
+export function registerAgendaHighlight() {
+  updateAgendaHighlights();
+  agendaInterval = setInterval(() => {
+    updateAgendaHighlights();
+  }, 60_000);
+}
+
+export function unregisterAgendaHighlight() {
+  if (agendaInterval) {
+    clearInterval(agendaInterval);
+  }
+}
+
+window.addEventListener('load', registerAgendaHighlight);
+window.addEventListener('beforeunload', unregisterAgendaHighlight);

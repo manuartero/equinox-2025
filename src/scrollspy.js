@@ -34,7 +34,7 @@ function smoothScrollToSection(sectionId) {
   const section = sections.find((section) => `#${section.id}` === sectionId);
 
   window.scrollTo({
-    top: section.offsetTop,
+    top: section?.offsetTop,
     behavior: 'smooth',
   });
 }
