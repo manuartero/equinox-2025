@@ -23,7 +23,7 @@
   & .agenda-column {
     padding: 12px;
     border-radius: 12px;
-    box-shadow: 0 0 16px var(--main-color);
+   
   }
 
   & h3 {
@@ -45,7 +45,6 @@
       padding: 12px 18px;
       border-radius: 12px;
       background: #48c0ee14;
-      box-shadow: 0 0 8px #48c0ee22;
 
       font-size: 1.1rem;
       color: #ffffff;
@@ -53,7 +52,7 @@
 
       & p.time {
         font-weight: 600;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         color: var(--accent-color);
       }
 

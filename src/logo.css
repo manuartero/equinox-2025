@@ -17,6 +17,9 @@
   z-index: 10;
   width: 80vh;
   max-width: 60vw;
+
+  /* Glow effect */
+  filter: drop-shadow(0 0 100px #00eeff91);
 }
 
 @supports (animation-timeline: view()) {
