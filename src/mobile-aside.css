@@ -1,0 +1,57 @@
+@media (width < 1700px) {
+  aside {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+
+    width: 100vw;
+    background-color: var(--bg);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .tron {
+    font-size: 0.7rem;
+    padding: 12px 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    &::before {
+      content: attr(data-icon);
+    }
+  }
+
+  .tron:last-child,
+  .tron:nth-last-child(2) {
+    width: fit-content;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+
+    width: clamp(150px, 25vw, 200px);
+    background: var(--tron);
+    color: #050801;
+  }
+
+  .tron:nth-last-child(2) {
+    left: 0;
+  }
+
+  @supports (animation-timeline: view()) {
+    .mobile-menu-toggle {
+      animation: toggleFadeIn linear both;
+      animation-timeline: view();
+      animation-range: 100vh 180vh;
+    }
+  }
+}

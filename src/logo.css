@@ -1,37 +1,46 @@
-@keyframes logoFadeUp {
+@keyframes headerFadeUp {
   0% {
-    top: 50%;
-    scale: 1;
+    top: 40vh;
+    height: 140px;
   }
   100% {
-    top: 50px;
-    scale: 0.7;
+    top: 5vh;
+    height: 50px;
   }
 }
 
-.logo {
+header {
   position: sticky;
   top: 50%;
-  margin: 0 auto;
+  z-index: 20;
+  padding-inline: clamp(20px, 5vw, 100px);
 
-  z-index: 10;
-  width: 80vh;
-  max-width: 60vw;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   /* Glow effect */
   filter: drop-shadow(0 0 100px #00eeff91);
+  
+  & .logo {
+    margin: 0 auto;
+    max-width: 60%;
+    height: 100%;
+  }
 }
 
 @supports (animation-timeline: view()) {
-  .logo {
-    animation: logoFadeUp linear both;
+  header {
+    animation: headerFadeUp linear both;
     animation-timeline: view();
     animation-range: 100vh 180vh;
   }
 }
 
 @supports not (animation-timeline: view()) {
-  .logo {
-    animation: logoFadeUp 1s linear forwards var(--logo-animation-duration);
+  header {
+    top: 5vh;
+    height: 50px;
   }
 }

@@ -4,6 +4,7 @@
 @import './grid.css';
 @import './faq.css';
 @import './aside.css';
+@import './mobile-aside.css';
 @import './ground.css';
 
 :root {
@@ -12,8 +13,8 @@
   font-weight: 400;
 
   color-scheme: dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(255, 255, 255);
+  background-color: var(--bg);
   scroll-behavior: smooth;
 
   font-synthesis: none;
@@ -21,6 +22,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --bg: #242424;
   --main-color: #48c0ee;
   --main-highlight-color: #48faff;
   --accent-color: #e41513;
@@ -51,10 +53,15 @@ main {
     width: min(90vw, 1200px);
     height: 100dvh;
     margin: 0 auto;
+    z-index: 10;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    & > article {
+      background-color: var(--bg);
+    }
   }
 }
 
@@ -68,22 +75,6 @@ a {
   main > section > article {
     animation: sectionContentFadeIn both;
     animation-timeline: view();
-  }
-}
-
-@supports not (animation-timeline: view()) {
-  body {
-    overflow-y: hidden;
-    animation: waitLogo var(--logo-animation-duration) forwards var(--logo-animation-duration);
-  }
-}
-
-@keyframes waitLogo {
-  0% {
-    overflow-y: hidden;
-  }
-  100% {
-    overflow-y: auto;
   }
 }
 

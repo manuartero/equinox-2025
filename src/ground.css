@@ -33,7 +33,6 @@
     background-image:
       linear-gradient(to right, var(--main-color) 2px, transparent 2px),
       linear-gradient(to bottom, var(--main-color) 2px, transparent 2px);
-    filter: drop-shadow(0 0 2px var(--main-color)) drop-shadow(0 0 2px var(--accent-color));
   }
 }
 
