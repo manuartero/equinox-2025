@@ -64,6 +64,53 @@
         font-weight: 700;
         border: 2px solid var(--accent-color);
       }
+
+      &.time-changed {
+        position: relative;
+        animation: pulseChange 2s ease-in-out infinite;
+        border: 2px solid #ffa500;
+        background: #ffa50020;
+
+        &::after {
+          content: '🕒 HORA ACTUALIZADA';
+          position: absolute;
+          top: -8px;
+          right: 8px;
+          background: #ffa500;
+          color: #000;
+          padding: 4px 8px;
+          border-radius: 12px;
+          font-size: 0.7rem;
+          font-weight: 700;
+          animation: fadeInOut 4s ease-in-out;
+          animation-fill-mode: forwards;
+        }
+      }
     }
+  }
+}
+
+@keyframes pulseChange {
+  0%, 100% {
+    box-shadow: 0 0 8px #ffa50080;
+  }
+  50% {
+    box-shadow: 0 0 16px #ffa500;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+    display: none;
   }
 }
