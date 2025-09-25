@@ -17,3 +17,5 @@ export function playBackgroundMusic() {
     audio.play().catch(() => {});
   });
 }
+
+playBackgroundMusic();
