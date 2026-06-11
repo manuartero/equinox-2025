@@ -1,291 +1,324 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-    <link rel="stylesheet" href="/src/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Equinox 2026</title>
-  </head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equinox: Solstice Edition — Hackathon 24h del CDO de Telefónica</title>
+  <meta name="description" content="Equinox: Solstice Edition, el hackathon de 24h del CDO de Telefónica. 25 y 26 de junio de 2026. Inscríbete ya.">
+  <meta name="theme-color" content="#15142d">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Equinox: Solstice Edition — Hackathon 24h del CDO de Telefónica">
+  <meta property="og:description" content="24 horas para construir, romper y volver a construir. 25 y 26 de junio de 2026 · Distrito Telefónica, Madrid & Online.">
+  <meta property="og:image" content="assets/logo-equinox-dark.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fonts/Telefonica_Sans_Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Telefonica_Sans_ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/equinox-bg.png" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <body>
-    <main>
-      <header>
-        <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 575.42 96.61">
-          <defs>
-            <style>
-              .st0 {
-                stroke: #e41513;
-                stroke-width: 3px;
-                fill: none;
-              }
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="nav__brand" href="#hero" aria-label="Equinox: Solstice Edition — inicio">
+        <img src="assets/logo-equinox-white.png" alt="Equinox" class="nav__logo" width="227" height="30">
+      </a>
 
-              .st1 {
-                stroke: #48c0ee;
-                stroke-width: 3px;
-                fill: none;
-              }
-            </style>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú de navegación">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
 
-            <filter id="glow" x="-40%" y="-40%" width="200%" height="200%">
-              <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#48c0ee" flood-opacity="0.8" />
-            </filter>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#sobre">Sobre el evento</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#premios">Premios</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a class="nav__cta" href="https://forms.office.com/e/UhEibitkPr" target="_blank" rel="noopener">Inscríbete</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <filter id="glow-accent" x="-40%" y="-40%" width="200%" height="200%">
-              <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#e41513" flood-opacity="0.8" />
-            </filter>
-          </defs>
-          <g id="I">
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M293.29,13.63h-16.1c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5h16.1c.83,0,1.5.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M293.29,29.84h-16.1c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5h16.1c.83,0,1.5.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M277.2,88.24c-.83,0-1.5-.67-1.5-1.5v-42.53c0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5v42.53c0,.83-.67,1.5-1.5,1.5Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M293.29,88.24c-.83,0-1.5-.67-1.5-1.5v-42.53c0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5v42.53c0,.83-.67,1.5-1.5,1.5Z"
-            />
-          </g>
-          <g id="N">
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M325.61,88.24c-.83,0-1.5-.67-1.5-1.5v-42.22c0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5v42.22c0,.83-.67,1.5-1.5,1.5Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M385.17,88.24c-.83,0-1.5-.67-1.5-1.5V23.47c0-5.42-4.41-9.84-9.84-9.84h-64.35c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5h64.35c7.08,0,12.84,5.76,12.84,12.84v63.26c0,.83-.67,1.5-1.5,1.5Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M368.87,88.24c-.83,0-1.5-.67-1.5-1.5v-54.12c0-1.53-1.26-2.78-2.8-2.78h-52.5v56.9c0,.83-.67,1.5-1.5,1.5s-1.5-.67-1.5-1.5V28.34c0-.83.67-1.5,1.5-1.5h54c3.2,0,5.8,2.59,5.8,5.78v54.12c0,.83-.67,1.5-1.5,1.5Z"
-            />
-          </g>
-          <g id="U">
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M223.62,88.24c-21.4,0-38.8-17.41-38.8-38.8V12.13c0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5v37.3c0,19.74,16.06,35.8,35.8,35.8s35.8-16.06,35.8-35.8V12.13c0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5v37.3c0,21.39-17.41,38.8-38.8,38.8Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M223.62,71.82c-14.15,0-22.61-9.28-22.61-24.83V12.13c0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5v34.85c0,13.88,7.15,21.83,19.61,21.83s19.61-7.96,19.61-21.83V12.13c0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5v34.85c0,15.55-8.45,24.83-22.61,24.83Z"
-            />
-          </g>
-          <g id="O">
-            <path
-              class="st0"
-              filter="url(#glow-accent)"
-              d="M438.94,88.43c-21.51,0-39.01-17.5-39.01-39.01s17.5-39.01,39.01-39.01,39.01,17.5,39.01,39.01-17.5,39.01-39.01,39.01ZM438.94,13.4c-19.86,0-36.01,16.16-36.01,36.01s16.16,36.01,36.01,36.01,36.01-16.16,36.01-36.01-16.16-36.01-36.01-36.01Z"
-            />
-            <path
-              class="st0"
-              filter="url(#glow-accent)"
-              d="M438.94,72.22c-12.57,0-22.8-10.23-22.8-22.8s10.23-22.8,22.8-22.8,22.8,10.23,22.8,22.8-10.23,22.8-22.8,22.8ZM438.94,29.62c-10.92,0-19.8,8.88-19.8,19.8s8.88,19.8,19.8,19.8,19.8-8.88,19.8-19.8-8.88-19.8-19.8-19.8Z"
-            />
-            <path
-              class="st0"
-              filter="url(#glow-accent)"
-              d="M438.94,56.13c-3.7,0-6.71-3.01-6.71-6.71s3.01-6.71,6.71-6.71,6.71,3.01,6.71,6.71-3.01,6.71-6.71,6.71ZM438.94,45.7c-2.05,0-3.71,1.67-3.71,3.71s1.67,3.71,3.71,3.71,3.71-1.67,3.71-3.71-1.67-3.71-3.71-3.71Z"
-            />
-          </g>
-          <g id="Q">
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M132.41,87.98c-21.51,0-39.01-17.5-39.01-39.01s17.5-39.01,39.01-39.01,39.01,17.5,39.01,39.01c0,7.47-2.12,14.72-6.12,20.99-.45.7-1.37.9-2.07.46-.7-.45-.9-1.37-.46-2.07,3.69-5.78,5.65-12.48,5.65-19.37,0-19.86-16.16-36.01-36.01-36.01s-36.01,16.16-36.01,36.01,16.16,36.01,36.01,36.01c6.89,0,13.59-1.95,19.37-5.65.7-.45,1.62-.24,2.07.46.45.7.24,1.63-.46,2.07-6.26,4-13.52,6.12-20.98,6.12Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M132.41,71.76c-12.57,0-22.8-10.23-22.8-22.8s10.23-22.8,22.8-22.8,22.8,10.23,22.8,22.8c0,3.04-.59,5.99-1.75,8.77-.32.76-1.2,1.13-1.96.81-.76-.32-1.13-1.2-.81-1.96,1.01-2.41,1.52-4.97,1.52-7.61,0-10.92-8.88-19.8-19.8-19.8s-19.8,8.88-19.8,19.8,8.88,19.8,19.8,19.8c2.64,0,5.2-.51,7.61-1.52.76-.32,1.64.04,1.96.81.32.76-.04,1.64-.81,1.96-2.78,1.16-5.73,1.75-8.77,1.75Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M132.41,55.68c-3.7,0-6.71-3.01-6.71-6.71s3.01-6.71,6.71-6.71,6.71,3.01,6.71,6.71-3.01,6.71-6.71,6.71ZM132.41,45.25c-2.05,0-3.71,1.67-3.71,3.71s1.67,3.71,3.71,3.71,3.71-1.67,3.71-3.71-1.67-3.71-3.71-3.71Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M172.26,78.85c-.38,0-.77-.15-1.06-.44l-8.21-8.21c-.59-.59-.59-1.54,0-2.12.59-.59,1.54-.59,2.12,0l8.21,8.21c.59.59.59,1.54,0,2.12-.29.29-.68.44-1.06.44Z"
-            />
-          </g>
-          <g id="X">
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M568.33,76.14c-.38,0-.77-.15-1.06-.44l-62.81-62.81c-.59-.59-.59-1.54,0-2.12.59-.59,1.54-.59,2.12,0l62.81,62.81c.59.59.59,1.54,0,2.12-.29.29-.68.44-1.06.44Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M556.87,87.59c-.38,0-.77-.15-1.06-.44l-62.81-62.81c-.59-.59-.59-1.54,0-2.12.59-.59,1.54-.59,2.12,0l62.81,62.81c.59.59.59,1.54,0,2.12-.29.29-.68.44-1.06.44Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M553.37,39.74c-.38,0-.77-.15-1.06-.44-.59-.59-.59-1.54,0-2.12l15.27-15.27c.59-.59,1.54-.59,2.12,0s.59,1.54,0,2.12l-15.27,15.27c-.29.29-.68.44-1.06.44Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M541.91,28.29c-.38,0-.77-.15-1.06-.44-.59-.59-.59-1.54,0-2.12l15.27-15.27c.59-.59,1.54-.59,2.12,0,.59.59.59,1.54,0,2.12l-15.27,15.27c-.29.29-.68.44-1.06.44Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M505.2,87.91c-.38,0-.77-.15-1.06-.44-.59-.59-.59-1.54,0-2.12l14.33-14.33c.59-.59,1.54-.59,2.12,0,.59.59.59,1.54,0,2.12l-14.33,14.33c-.29.29-.68.44-1.06.44Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M493.74,76.46c-.38,0-.77-.15-1.06-.44-.59-.59-.59-1.54,0-2.12l14.33-14.33c.59-.59,1.54-.59,2.12,0s.59,1.54,0,2.12l-14.33,14.33c-.29.29-.68.44-1.06.44Z"
-            />
-          </g>
-          <g id="E">
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M77.81,69.29H26.26c-2.39,0-4.33-1.94-4.33-4.33v-29.57c0-2.39,1.94-4.33,4.33-4.33h34.19c.83,0,1.5.67,1.5,1.5s-.67,1.5-1.5,1.5H26.26c-.74,0-1.33.6-1.33,1.33v29.57c0,.74.6,1.33,1.33,1.33h51.55c.83,0,1.5.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
-            />
-            <path
-              class="st1"
-              filter="url(#glow)"
-              d="M77.81,85.52H18.83c-7.08,0-12.84-5.76-12.84-12.84V25.32c0-7.08,5.76-12.84,12.84-12.84h47.64c6.84,0,12.84,6.47,12.84,13.84v25.93h-39.62c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5h36.62v-22.93c0-5.67-4.69-10.84-9.84-10.84H18.83c-5.42,0-9.84,4.41-9.84,9.84v47.37c0,5.43,4.41,9.84,9.84,9.84h58.98c.83,0,1.5.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
-            />
-          </g>
-        </svg>
-      </header>
+  <main id="contenido">
 
-      <section id="hero">
-        <article>
-          <figure>
-            <img src="/images/common/arrow.png" alt="arrow" onclick="window.location.href='/#agenda'" />
-            <figcaption class="title">build</figcaption>
-          </figure>
-        </article>
-      </section>
+    <!-- 1. HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__inner">
+        <h1 class="sr-only">Equinox: Solstice Edition · Summer 26</h1>
+        <img src="assets/equinox-logo.png" alt="Equinox · Solstice Edition · Summer 26" class="hero__logo reveal" width="1159" height="260" fetchpriority="high" decoding="async">
+        <div class="hero__bottom">
+          <p class="hero__dates reveal">25 y 26 de junio de 2026 · Distrito Telefónica, Madrid &amp; Online</p>
+          <p class="hero__claim reveal">El hackathon de 24 horas del CDO de Telefónica. 24 horas para construir, romper y volver a construir.</p>
 
-      <section id="agenda" class="agenda">
-        <article>
-          <div class="agenda-container">
-            <div class="agenda-column" data-day="2026-06-25">
-              <h3>Jueves 25 de junio</h3>
-              <ul>
-                <li>
-                  <p>Presentación del evento y reglas</p>
-                  <p class="time" data-start-time="11:00" data-end-time="11:30">11:00 - 11:30</p>
-                  <p class="location">XDlab</p>
-                </li>
-                <li>
-                  <p>Actividades (XBox, Juegos de Mesa)</p>
-                  <p class="time" data-start-time="12:00" data-end-time="20:00">12:00 - 20:00</p>
-                  <p class="location">XDlab</p>
-                </li>
-                <li>
-                  <p>Pizzas 🍕</p>
-                  <p class="time" data-start-time="19:00">19:00</p>
-                  <p class="location">XDlab</p>
-                </li>
-              </ul>
-            </div>
-            <div class="agenda-column" data-day="2026-06-26">
-              <h3>Viernes 26 de junio</h3>
-              <ul>
-                <li>
-                  <p>Entrega de premios 🏅</p>
-                  <p class="time" data-start-time="10:30" data-end-time="13:30">10:30 - 13:30</p>
-                  <p class="location">Universitas</p>
-                </li>
-              </ul>
-            </div>
+          <div class="hero__actions reveal">
+            <a class="btn btn--primary" href="https://forms.office.com/e/UhEibitkPr" target="_blank" rel="noopener">Inscríbete ahora</a>
+            <a class="btn btn--ghost" href="#sobre">Descubre el evento</a>
           </div>
-          <small class="agenda-disclaimer">
-            Los eventos presenciales tendrán lugar en los edificios de <strong>Distrito Telefónica</strong> en Madrid.
-          </small>
-        </article>
-      </section>
+        </div>
+      </div>
+    </section>
 
-      <section id="awards" class="awards">
-        <article>
-          <div class="grid">
-            <figure>
-              <img src="/images/awards/winner.png" alt="Number One Award" />
-              <figcaption class="title">Number One</figcaption>
-              <figcaption class="desc">La Elección del Jurado</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/awards/good-boy.png" alt="Doers Choice Award" />
-              <figcaption class="title">Doers Choice</figcaption>
-              <figcaption class="desc">Votación del público asistente</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/awards/robot.png" alt="AI Award" />
-              <figcaption class="title">Teacher's Pet AI</figcaption>
-              <figcaption class="desc">Mejor proyecto asociado a IA</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/awards/colossus.png" alt="Cybersecurity Award" />
-              <figcaption class="title">Teacher's Pet Cybersecurity</figcaption>
-              <figcaption class="desc">Mejor proyecto asociado a Ciberseguridad</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/awards/toolbox.png" alt="Toolbox Award" />
-              <figcaption class="title">Teacher's Pet Toolbox</figcaption>
-              <figcaption class="desc">Mejora de la exp. de construcción/productividad/métricas</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/awards/agent.png" alt="Agent Award" />
-              <figcaption class="title">Teacher's Pet B2A</figcaption>
-              <figcaption class="desc">Mejor proyecto de Agentes</figcaption>
-            </figure>
+    <!-- CUENTA ATRÁS (módulo aparte) -->
+    <section class="cd-band" aria-label="Cuenta atrás para el cierre de inscripciones">
+      <div class="cd-band__inner" id="countdown" role="timer">
+        <p class="countdown__label">Las inscripciones se cierran el 23 de junio a las 23:00 h</p>
+        <div class="cd-clock" aria-hidden="true">
+          <div class="cd-unit"><span class="cd-unit__num" data-cd="days">--</span><span class="cd-unit__cap">días</span></div>
+          <div class="cd-unit"><span class="cd-unit__num" data-cd="hours">--</span><span class="cd-unit__cap">horas</span></div>
+          <div class="cd-unit"><span class="cd-unit__num" data-cd="mins">--</span><span class="cd-unit__cap">min</span></div>
+          <div class="cd-unit"><span class="cd-unit__num" data-cd="secs">--</span><span class="cd-unit__cap">seg</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SOBRE EL EVENTO (Editorial) -->
+    <section class="ed-section" id="sobre">
+      <div class="ed-wrap">
+        <header class="ed-head reveal">
+          <span class="ed-head__index" aria-hidden="true" data-parallax="0.12">01</span>
+          <span class="ed-head__kicker">El evento</span>
+          <h2 class="ed-head__title">Sobre<br>Equinox</h2>
+        </header>
+        <div class="about-cols">
+          <article class="about-col reveal">
+            <span class="about-col__num" aria-hidden="true">01</span>
+            <h3>¿Qué es Equinox?</h3>
+            <p>Equinox es el hackathon de 24 horas del CDO de Telefónica. Llevamos casi 10 años celebrándolo dos veces al año: una cita para juntarnos, experimentar sin miedo y convertir ideas en prototipos reales en una sola jornada intensa.</p>
+          </article>
+          <article class="about-col reveal">
+            <span class="about-col__num" aria-hidden="true">02</span>
+            <h3>¿Qué tipo de ideas se pueden desarrollar?</h3>
+            <p>Lo que se te ocurra: inteligencia artificial, agentes, ciberseguridad, herramientas internas, automatizaciones, mejoras de productividad… Si aporta valor y cabe en 24 horas, tiene su sitio en Equinox.</p>
+          </article>
+          <article class="about-col reveal">
+            <span class="about-col__num" aria-hidden="true">03</span>
+            <h3>¿Quién puede participar?</h3>
+            <p>Cualquier persona del CDO de Telefónica con ganas de construir. Puedes presentarte de forma individual o en equipos de hasta 5 personas. No necesitas ser una persona experta: necesitas curiosidad.</p>
+          </article>
+          <article class="about-col reveal">
+            <span class="about-col__num" aria-hidden="true">04</span>
+            <h3>¿Dónde se celebrará?</h3>
+            <p>En el Distrito Telefónica de Madrid —en el XDLab y en Universitas— y también en remoto, para que nadie se quede fuera. La presentación y la entrega de premios serán en Universitas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. AGENDA (Editorial sobre fondo espacial) -->
+    <section class="ed-section ed-section--dark ed-section--space" id="agenda">
+      <div class="ed-wrap">
+        <header class="ed-head reveal">
+          <span class="ed-head__index" aria-hidden="true" data-parallax="0.12">02</span>
+          <span class="ed-head__kicker">24 horas</span>
+          <h2 class="ed-head__title">La<br>agenda</h2>
+        </header>
+        <div class="ed-agenda">
+          <article class="ed-day reveal">
+            <h3 class="ed-day__title"><span class="ed-day__big">25</span><span class="ed-day__mon">junio</span></h3>
+            <ul class="ed-timeline">
+              <li><span class="ed-timeline__time">11:00–11:30</span><span class="ed-timeline__desc">Bienvenida, presentación del evento y normas <em>(XDLab Madrid / Online)</em></span></li>
+              <li><span class="ed-timeline__time">12:00–20:00</span><span class="ed-timeline__desc">Zona gaming (Xbox) y juegos de mesa <em>(XDLab Madrid)</em></span></li>
+              <li><span class="ed-timeline__time">19:00</span><span class="ed-timeline__desc">Networking y pizzas 🍕</span></li>
+            </ul>
+          </article>
+          <article class="ed-day reveal">
+            <h3 class="ed-day__title"><span class="ed-day__big">26</span><span class="ed-day__mon">junio</span></h3>
+            <ul class="ed-timeline">
+              <li><span class="ed-timeline__time">10:30</span><span class="ed-timeline__desc">Cierre de entregas <em>(Universitas)</em></span></li>
+              <li><span class="ed-timeline__time">10:45</span><span class="ed-timeline__desc">Presentación de proyectos (5 min por equipo)</span></li>
+              <li><span class="ed-timeline__time">13:00</span><span class="ed-timeline__desc">Deliberación del jurado</span></li>
+              <li><span class="ed-timeline__time">13:15</span><span class="ed-timeline__desc">Entrega de premios 🏅</span></li>
+              <li><span class="ed-timeline__time">13:30</span><span class="ed-timeline__desc">Cierre</span></li>
+            </ul>
+          </article>
+        </div>
+        <p class="ed-note reveal">La agenda podrá ajustarse según el número de participantes.<br>Si hubiera que limitar el aforo, las plazas se asignarán por orden de inscripción.</p>
+      </div>
+    </section>
+
+    <!-- 4. PREMIOS (maquetación Bento, cabecera Editorial) -->
+    <section class="bn-section" id="premios">
+      <div class="bn-aurora bn-aurora--warm" aria-hidden="true"></div>
+      <div class="bn-wrap">
+        <header class="ed-head reveal">
+          <span class="ed-head__index" aria-hidden="true" data-parallax="0.12">03</span>
+          <span class="ed-head__kicker">Seis categorías</span>
+          <h2 class="ed-head__title">Los<br>premios</h2>
+        </header>
+        <div class="bn-grid bn-grid--prizes">
+          <article class="bn-tile bn-tile--prize bn-tile--lg reveal">
+            <svg class="bn-prize__icon" viewBox="0 0 60 56" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+              <polyline points="6,50 6,28 18,40 30,10 42,40 54,28 54,50"/>
+              <line x1="6" y1="50" x2="54" y2="50"/>
+            </svg>
+            <h3>Number One</h3>
+            <p>El proyecto elegido por el jurado. Lo mejor de lo mejor.</p>
+          </article>
+          <article class="bn-tile bn-tile--prize reveal">
+            <svg class="bn-prize__icon" viewBox="0 0 60 56" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+              <path d="M20,50 L20,30 Q20,22 28,20 L38,10 Q42,6 44,10 L38,22 L46,22 Q52,22 52,28 Q52,32 50,34 Q52,36 50,40 Q50,44 48,46 Q48,50 44,50 Z"/>
+              <rect x="10" y="34" width="10" height="16" rx="4"/>
+            </svg>
+            <h3>Doers Choice</h3>
+            <p>El favorito por votación pública de todos los participantes.</p>
+          </article>
+          <article class="bn-tile bn-tile--prize reveal">
+            <svg class="bn-prize__icon" viewBox="0 0 60 52" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" aria-hidden="true">
+              <rect x="14" y="14" width="32" height="32" rx="4"/>
+              <rect x="22" y="22" width="16" height="16" rx="2" fill="currentColor" stroke="none"/>
+              <line x1="30" y1="14" x2="30" y2="4"/>
+              <circle cx="30" cy="4" r="3.5" fill="currentColor" stroke="none"/>
+              <line x1="14" y1="24" x2="6" y2="24" stroke-width="4"/>
+              <line x1="14" y1="36" x2="6" y2="36" stroke-width="4"/>
+              <line x1="46" y1="24" x2="54" y2="24" stroke-width="4"/>
+              <line x1="46" y1="36" x2="54" y2="36" stroke-width="4"/>
+            </svg>
+            <h3>Teacher's Pet · AI</h3>
+            <p>El mejor proyecto de inteligencia artificial.</p>
+          </article>
+          <article class="bn-tile bn-tile--prize reveal">
+            <svg class="bn-prize__icon" viewBox="0 0 60 64" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+              <path d="M30,4 L54,14 L54,34 Q54,52 30,60 Q6,52 6,34 L6,14 Z"/>
+              <polyline points="18,32 26,42 44,24"/>
+            </svg>
+            <h3>Teacher's Pet · Cybersecurity</h3>
+            <p>El mejor proyecto de ciberseguridad.</p>
+          </article>
+          <article class="bn-tile bn-tile--prize reveal">
+            <svg class="bn-prize__icon" viewBox="0 0 62 64" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+              <rect x="4" y="24" width="54" height="36" rx="5"/>
+              <path d="M18,24 L18,16 Q18,8 31,8 Q44,8 44,16 L44,24"/>
+              <line x1="4" y1="40" x2="58" y2="40" stroke-width="4"/>
+              <rect x="24" y="35" width="14" height="10" rx="3" stroke-width="3.5"/>
+            </svg>
+            <h3>Teacher's Pet · Toolbox</h3>
+            <p>El proyecto que mejor mejora la experiencia de desarrollo, la productividad o las métricas.</p>
+          </article>
+          <article class="bn-tile bn-tile--prize reveal">
+            <svg class="bn-prize__icon" viewBox="0 0 60 52" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" aria-hidden="true">
+              <circle cx="30" cy="30" r="10"/>
+              <circle cx="30" cy="6" r="5" fill="currentColor" stroke="none"/>
+              <line x1="30" y1="11" x2="30" y2="20" stroke-width="4"/>
+              <circle cx="6" cy="44" r="5" fill="currentColor" stroke="none"/>
+              <line x1="10" y1="41" x2="21" y2="35" stroke-width="4"/>
+              <circle cx="54" cy="44" r="5" fill="currentColor" stroke="none"/>
+              <line x1="50" y1="41" x2="39" y2="35" stroke-width="4"/>
+            </svg>
+            <h3>Teacher's Pet · B2A</h3>
+            <p>El mejor proyecto basado en agentes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLAIM -->
+    <section class="claim" id="claim" aria-label="Claim">
+      <p class="claim__text reveal">Construir, romper<br>y volver a <em>construir.</em></p>
+      <p class="claim__sub reveal">… y vuelta a empezar.</p>
+    </section>
+
+    <!-- 5. FAQ — Vista de referencia (índice fijo + respuestas) -->
+    <section class="ed-section faq" id="faq">
+      <div class="ed-wrap">
+        <header class="ed-head reveal">
+          <span class="ed-head__index" aria-hidden="true" data-parallax="0.12">04</span>
+          <span class="ed-head__kicker">Lo práctico</span>
+          <h2 class="ed-head__title">Preguntas<br>frecuentes</h2>
+        </header>
+
+        <div class="faq-layout">
+          <nav class="faq-nav" aria-label="Categorías de preguntas frecuentes">
+            <p class="faq-nav__label">Índice</p>
+            <ul class="faq-nav__list">
+              <li><a href="#faq-registro" class="faq-nav__item"><span class="faq-nav__num">1</span><span class="faq-nav__txt">Registro</span></a></li>
+              <li><a href="#faq-equipos" class="faq-nav__item"><span class="faq-nav__num">2</span><span class="faq-nav__txt">Equipos</span></a></li>
+              <li><a href="#faq-proyectos" class="faq-nav__item"><span class="faq-nav__num">3</span><span class="faq-nav__txt">Proyectos</span></a></li>
+              <li><a href="#faq-logistica" class="faq-nav__item"><span class="faq-nav__num">4</span><span class="faq-nav__txt">Logística</span></a></li>
+            </ul>
+          </nav>
+
+          <div class="faq-content">
+            <article class="faq-group reveal" id="faq-registro">
+              <p class="faq-group__eyebrow"><span class="faq-group__no">01</span><span class="faq-group__line" aria-hidden="true"></span>Registro</p>
+              <div class="faq-qa">
+                <h3>¿Cómo me inscribo?</h3>
+                <p>Rellena el formulario de inscripción. Te llevará un minuto y reservarás tu plaza.</p>
+                <a class="btn btn--primary btn--sm" href="https://forms.office.com/e/UhEibitkPr" target="_blank" rel="noopener">Ir al formulario</a>
+              </div>
+              <div class="faq-qa">
+                <h3>¿Cuál es la fecha límite?</h3>
+                <p>El plazo se cierra el <strong>23 de junio a las 23:00 h</strong>. No lo dejes para el último momento.</p>
+              </div>
+              <div class="faq-qa">
+                <h3>¿Y si se superan las plazas?</h3>
+                <p>Si hubiera que limitar el aforo, las plazas se asignarán por <strong>orden de inscripción</strong>. Cuanto antes te apuntes, mejor.</p>
+              </div>
+            </article>
+
+            <article class="faq-group reveal" id="faq-equipos">
+              <p class="faq-group__eyebrow"><span class="faq-group__no">02</span><span class="faq-group__line" aria-hidden="true"></span>Equipos</p>
+              <div class="faq-qa">
+                <h3>¿Cuántas personas forman un equipo?</h3>
+                <p>Hasta 5 personas por equipo. También puedes participar en solitario si lo prefieres.</p>
+              </div>
+              <div class="faq-qa">
+                <h3>¿Puedo participar si no tengo equipo?</h3>
+                <p>¡Claro! Apúntate igualmente: te ayudamos a encontrar equipo durante el evento para que nadie se quede sin construir.</p>
+              </div>
+            </article>
+
+            <article class="faq-group reveal" id="faq-proyectos">
+              <p class="faq-group__eyebrow"><span class="faq-group__no">03</span><span class="faq-group__line" aria-hidden="true"></span>Proyectos y entregas</p>
+              <div class="faq-qa">
+                <h3>¿Qué tipo de proyectos puedo presentar?</h3>
+                <p>Cualquier idea que aporte valor: IA, agentes, ciberseguridad, herramientas de productividad, automatizaciones… Lo importante es que esté construida durante el hackathon.</p>
+              </div>
+              <div class="faq-qa">
+                <h3>¿Dónde envío mi proyecto?</h3>
+                <p>Recibirás las instrucciones de entrega al inicio del evento, junto con el canal donde subir tu proyecto.</p>
+              </div>
+              <div class="faq-qa">
+                <h3>¿Cuál es la hora límite de entrega?</h3>
+                <p>El cierre de entregas es el <strong>26 de junio a las 10:30</strong>. Después, ¡a presentar!</p>
+              </div>
+              <div class="faq-qa">
+                <h3>¿Cuánto tiempo tenemos para presentar?</h3>
+                <p>Cada equipo dispone de <strong>5 minutos</strong> para enseñar su proyecto al jurado y al resto de participantes.</p>
+              </div>
+            </article>
+
+            <article class="faq-group reveal" id="faq-logistica">
+              <p class="faq-group__eyebrow"><span class="faq-group__no">04</span><span class="faq-group__line" aria-hidden="true"></span>Logística</p>
+              <div class="faq-qa">
+                <h3>¿Qué necesito llevar?</h3>
+                <p>Tu portátil, cargador y muchas ganas. Si vienes presencialmente, no te olvides de tu acreditación para el Distrito Telefónica.</p>
+              </div>
+              <div class="faq-qa">
+                <h3>¿Habrá comida y bebida?</h3>
+                <p>Sí. Habrá networking y pizzas 🍕 la tarde del 25, además de avituallamiento para aguantar las 24 horas a pleno rendimiento.</p>
+              </div>
+            </article>
           </div>
-        </article>
-      </section>
+        </div>
+      </div>
+    </section>
 
-      <section id="faq" class="faq faq-fixed-height">
-        <article>
-          <div class="faq-container">
-            <!-- FAQ content will be dynamically loaded here -->
-          </div>
-        </article>
-      </section>
-    </main>
+  </main>
 
-    <aside>
-      <a href="#agenda" data-icon="📅" class="tron">Agenda</a>
-      <a href="#awards" data-icon="🏆" class="tron">Premios</a>
-      <a href="#faq" data-icon="❓" class="tron">FAQ</a>
-      <a href="https://forms.office.com/e/UhEibitkPr" target="_blank" rel="noopener noreferrer" class="tron"
-        >Registro ↗</a
-      >
-      <a href="https://forms.office.com/e/3rkj3nzedJ" target="_blank" rel="noopener noreferrer" class="tron"
-        >Submit ↗</a
-      >
-    </aside>
+  <!-- 9. FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <img src="assets/logo-equinox-white.png" alt="Equinox" class="footer__logo" width="200" height="26" loading="lazy" decoding="async">
+      <p class="footer__claim">¿Listo para construir? Nos vemos los 25 y 26 de junio.</p>
+      <a class="btn btn--primary" href="https://forms.office.com/e/UhEibitkPr" target="_blank" rel="noopener">Inscríbete ahora</a>
+      <p class="footer__meta">© 2026 Telefónica Innovación Digital, S.L. Todos los derechos reservados</p>
+    </div>
+  </footer>
 
-    <footer class="ground"></footer>
-    <script type="module" src="/src/background-music.js"></script>
-    <script type="module" src="/src/equinox-logo.js"></script>
-    <script type="module" src="/src/faq.js"></script>
-    <script type="module" src="/src/scrollspy.js"></script>
-    <script type="module" src="/src/mobile-menu.js"></script>
-    <script type="module" src="/src/agenda-highlight.js"></script>
-    <script type="module" src="/src/time-change-indicator.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>

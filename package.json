@@ -10,13 +10,10 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "npx serve .",
     "prettier": "prettier --write '**/*.{html,css,js,json,md}'"
   },
   "devDependencies": {
-    "vite": "7.1.0",
     "prettier": "3.6.2"
   }
 }
