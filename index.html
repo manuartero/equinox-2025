@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preload" href="assets/fonts/Telefonica_Sans_Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Telefonica_Sans_ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/equinox-bg.png" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/equinox-bg.jpeg" as="image" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -49,7 +49,11 @@
     <section class="hero" id="hero">
       <div class="hero__inner">
         <h1 class="sr-only">Equinox: Solstice Edition · Summer 26</h1>
-        <img src="assets/equinox-logo.png" alt="Equinox · Solstice Edition · Summer 26" class="hero__logo reveal" width="1159" height="260" fetchpriority="high" decoding="async">
+        <div class="hero__logo-wrap reveal">
+          <img src="assets/equinox-logo.png" alt="Equinox · Solstice Edition · Summer 26" class="hero__logo" width="1159" height="260" fetchpriority="high" decoding="async">
+          <span class="hero__sun hero__sun--q" aria-hidden="true"></span>
+          <span class="hero__sun hero__sun--o" aria-hidden="true"></span>
+        </div>
         <div class="hero__bottom">
           <p class="hero__dates reveal">25 y 26 de junio de 2026 · Distrito Telefónica, Madrid &amp; Online</p>
           <p class="hero__claim reveal">El hackathon de 24 horas del CDO de Telefónica. 24 horas para construir, romper y volver a construir.</p>
@@ -79,7 +83,12 @@
     <section class="ed-section" id="sobre">
       <div class="ed-wrap">
         <header class="ed-head reveal">
-          <span class="ed-head__index" aria-hidden="true" data-parallax="0.12">01</span>
+          <span class="ed-head__index ed-head__index--mark" aria-hidden="true" data-parallax="0.12">
+            <svg viewBox="0 0 64 64" fill="currentColor" aria-hidden="true">
+              <path d="M46.86,59.79c1.63,2.27,4.28,3.75,7.28,3.75,4.96,0,8.97-4.04,8.97-9.03,0-3.01-1.46-5.67-3.7-7.31-2.87,5.32-7.24,9.71-12.55,12.59Z"/>
+              <path d="M63.11,32.06c0-17.15-13.9-31.06-31.06-31.06h0C14.9,1,1,14.9,1,32.06v.43c0,17.15,13.9,31.06,31.06,31.06h0c5.36,0,10.41-1.36,14.81-3.75-1.07-1.49-1.7-3.31-1.7-5.28,0-4.99,4.02-9.03,8.97-9.03,1.97,0,3.79.64,5.27,1.73,2.36-4.38,3.7-9.39,3.7-14.71v-.43Z"/>
+            </svg>
+          </span>
           <span class="ed-head__kicker">El evento</span>
           <h2 class="ed-head__title">Sobre<br>Equinox</h2>
         </header>
@@ -112,7 +121,6 @@
     <section class="ed-section ed-section--dark ed-section--space" id="agenda">
       <div class="ed-wrap">
         <header class="ed-head reveal">
-          <span class="ed-head__index" aria-hidden="true" data-parallax="0.12">02</span>
           <span class="ed-head__kicker">24 horas</span>
           <h2 class="ed-head__title">La<br>agenda</h2>
         </header>
@@ -145,7 +153,7 @@
       <div class="bn-aurora bn-aurora--warm" aria-hidden="true"></div>
       <div class="bn-wrap">
         <header class="ed-head reveal">
-          <span class="ed-head__index" aria-hidden="true" data-parallax="0.12">03</span>
+          <span class="ed-head__index" aria-hidden="true" data-parallax="0.12">★</span>
           <span class="ed-head__kicker">Seis categorías</span>
           <h2 class="ed-head__title">Los<br>premios</h2>
         </header>
@@ -225,7 +233,7 @@
     <section class="ed-section faq" id="faq">
       <div class="ed-wrap">
         <header class="ed-head reveal">
-          <span class="ed-head__index" aria-hidden="true" data-parallax="0.12">04</span>
+          <span class="ed-head__index" aria-hidden="true" data-parallax="0.12">?</span>
           <span class="ed-head__kicker">Lo práctico</span>
           <h2 class="ed-head__title">Preguntas<br>frecuentes</h2>
         </header>

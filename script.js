@@ -189,11 +189,31 @@
   if (faqLayout) {
     var faqGroups = Array.prototype.slice.call(faqLayout.querySelectorAll(".faq-group[id]"));
     var faqItems = Array.prototype.slice.call(faqLayout.querySelectorAll(".faq-nav__item"));
-    if (faqGroups.length && faqItems.length) {
-      var faqCurrent = null;
+    var faqContent = faqLayout.querySelector(".faq-content");
+    if (faqGroups.length && faqItems.length && faqContent) {
+      // Activa el modo pestañas (sin JS se ven todas las respuestas de corrido)
+      faqContent.classList.add("is-tabs");
+
+      // Fija el alto al de la pestaña más alta para que no salte al cambiar
+      function sizeTabs() {
+        faqContent.style.minHeight = "0px";
+        var max = 0;
+        faqGroups.forEach(function (g) {
+          g.style.display = "block";
+          if (g.offsetHeight > max) max = g.offsetHeight;
+          g.style.display = "";
+        });
+        faqContent.style.minHeight = max + "px";
+      }
+      var sizeTicking = false;
+      window.addEventListener("resize", function () {
+        if (!sizeTicking) {
+          sizeTicking = true;
+          requestAnimationFrame(function () { sizeTabs(); sizeTicking = false; });
+        }
+      });
+
       function faqActivate(id) {
-        if (id === faqCurrent) return;
-        faqCurrent = id;
         faqItems.forEach(function (a) {
           var on = a.getAttribute("href") === "#" + id;
           a.classList.toggle("is-active", on);
@@ -203,22 +223,21 @@
             a.removeAttribute("aria-current");
           }
         });
-      }
-      function faqUpdate() {
-        var lineY = window.innerHeight * 0.38;
-        var act = faqGroups[0];
         faqGroups.forEach(function (g) {
-          if (g.getBoundingClientRect().top - lineY <= 0) act = g;
+          g.classList.toggle("is-active", g.id === id);
         });
-        faqActivate(act.id);
       }
-      var faqTicking = false;
-      function faqScroll() {
-        if (!faqTicking) { faqTicking = true; requestAnimationFrame(function () { faqUpdate(); faqTicking = false; }); }
-      }
-      window.addEventListener("scroll", faqScroll, { passive: true });
-      window.addEventListener("resize", faqScroll);
-      faqUpdate();
+
+      faqItems.forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          faqActivate(a.getAttribute("href").slice(1));
+        });
+      });
+
+      // Pestaña por defecto: la primera (Registro)
+      faqActivate(faqGroups[0].id);
+      sizeTabs();
     }
   }
 })();
