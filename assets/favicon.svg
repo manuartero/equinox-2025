@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Equinox">
+  <!-- Hueco en creciente (eclipse) alrededor del punto de la Q -->
+  <mask id="q-notch">
+    <rect width="64" height="64" fill="#fff"/>
+    <circle cx="46" cy="46" r="12.5" fill="#000"/>
+  </mask>
+  <!-- Círculo grande: el cuerpo de la Q -->
+  <circle cx="28" cy="28" r="24" fill="#f39200" mask="url(#q-notch)"/>
+  <!-- Círculo pequeño: el punto/cola de la Q -->
+  <circle cx="46" cy="46" r="10" fill="#f39200"/>
+</svg>
