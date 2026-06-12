@@ -24,7 +24,8 @@
   <header class="site-header">
     <nav class="nav" aria-label="Navegación principal">
       <a class="nav__brand" href="#hero" aria-label="Equinox: Solstice Edition — inicio">
-        <img src="assets/logo-equinox-white.png" alt="Equinox" class="nav__logo" width="227" height="30">
+        <img src="assets/logo-equinox-white.png" alt="Equinox" class="nav__logo nav__logo--full" width="227" height="30">
+        <img src="assets/favicon.svg" alt="" class="nav__logo nav__logo--mark" width="32" height="32" aria-hidden="true">
       </a>
 
       <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú de navegación">
@@ -55,8 +56,8 @@
           <span class="hero__sun hero__sun--o" aria-hidden="true"></span>
         </div>
         <div class="hero__bottom">
-          <p class="hero__dates reveal">25 y 26 de junio de 2026 · Distrito Telefónica, Madrid &amp; Online</p>
-          <p class="hero__claim reveal">El hackathon de 24 horas del CDO de Telefónica. 24 horas para construir, romper y volver a construir.</p>
+          <p class="hero__dates reveal">25 y 26 de junio de 2026<span class="hero__sep"> · </span><br class="hero__break">Distrito Telefónica, Madrid &amp; Online</p>
+          <p class="hero__claim reveal">Un hackathon de 24 horas de CDO de Telefónica para construir, romper y volver a construir.</p>
 
           <div class="hero__actions reveal">
             <a class="btn btn--primary" href="https://forms.office.com/e/UhEibitkPr" target="_blank" rel="noopener">Inscríbete ahora</a>
@@ -96,22 +97,22 @@
           <article class="about-col reveal">
             <span class="about-col__num" aria-hidden="true">01</span>
             <h3>¿Qué es Equinox?</h3>
-            <p>Equinox es el hackathon de 24 horas del CDO de Telefónica. Llevamos casi 10 años celebrándolo dos veces al año: una cita para juntarnos, experimentar sin miedo y convertir ideas en prototipos reales en una sola jornada intensa.</p>
+            <p>Equinox es el hackathon de 24 horas de CDO de Telefónica, una cita para juntarnos, perder el miedo a las ideas raras y convertir cualquier ocurrencia en un prototipo real en una sola jornada. Llevamos casi 10 ediciones y lo celebramos dos veces al año.</p>
           </article>
           <article class="about-col reveal">
             <span class="about-col__num" aria-hidden="true">02</span>
             <h3>¿Qué tipo de ideas se pueden desarrollar?</h3>
-            <p>Lo que se te ocurra: inteligencia artificial, agentes, ciberseguridad, herramientas internas, automatizaciones, mejoras de productividad… Si aporta valor y cabe en 24 horas, tiene su sitio en Equinox.</p>
+            <p>Casi lo que se te ocurra: IA, agentes, ciberseguridad, herramientas internas, automatizaciones… Si tiene sentido en 24 horas y aporta algo, tiene su sitio aquí.</p>
           </article>
           <article class="about-col reveal">
             <span class="about-col__num" aria-hidden="true">03</span>
             <h3>¿Quién puede participar?</h3>
-            <p>Cualquier persona del CDO de Telefónica con ganas de construir. Puedes presentarte de forma individual o en equipos de hasta 5 personas. No necesitas ser una persona experta: necesitas curiosidad.</p>
+            <p>Cualquier persona del CDO de Telefónica con ganas de construir. Puedes presentarte de forma individual o en equipos de hasta 5 personas. No necesitas ser experto/a, solo necesitas curiosidad y ganas de aportar todos tus conocimientos.</p>
           </article>
           <article class="about-col reveal">
             <span class="about-col__num" aria-hidden="true">04</span>
             <h3>¿Dónde se celebrará?</h3>
-            <p>En el Distrito Telefónica de Madrid —en el XDLab y en Universitas— y también en remoto, para que nadie se quede fuera. La presentación y la entrega de premios serán en Universitas.</p>
+            <p>Podrás seguir el hackathon tanto presencialmente en Distrito Telefónica (Madrid) como en remoto. La presentación y la entrega de premios serán en Universitas (edificio de Distrito Telefónica).</p>
           </article>
         </div>
       </div>
@@ -144,7 +145,7 @@
             </ul>
           </article>
         </div>
-        <p class="ed-note reveal">La agenda podrá ajustarse según el número de participantes.<br>Si hubiera que limitar el aforo, las plazas se asignarán por orden de inscripción.</p>
+        <p class="ed-note reveal">La agenda puede ajustarse según el número de participantes. Las plazas son limitadas y se asignan por orden de inscripción, ¡apúntate cuanto antes!</p>
       </div>
     </section>
 
@@ -164,7 +165,7 @@
               <line x1="6" y1="50" x2="54" y2="50"/>
             </svg>
             <h3>Number One</h3>
-            <p>El proyecto elegido por el jurado. Lo mejor de lo mejor.</p>
+            <p>El que se lleva el trofeo a casa, ¡el proyecto elegido por el jurado!</p>
           </article>
           <article class="bn-tile bn-tile--prize reveal">
             <svg class="bn-prize__icon" viewBox="0 0 60 56" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
@@ -172,7 +173,7 @@
               <rect x="10" y="34" width="10" height="16" rx="4"/>
             </svg>
             <h3>Doers Choice</h3>
-            <p>El favorito por votación pública de todos los participantes.</p>
+            <p>Lo que vota la gente. El proyecto que más ha enganchado al resto del equipo.</p>
           </article>
           <article class="bn-tile bn-tile--prize reveal">
             <svg class="bn-prize__icon" viewBox="0 0 60 52" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" aria-hidden="true">
@@ -204,7 +205,7 @@
               <rect x="24" y="35" width="14" height="10" rx="3" stroke-width="3.5"/>
             </svg>
             <h3>Teacher's Pet · Toolbox</h3>
-            <p>El proyecto que mejor mejora la experiencia de desarrollo, la productividad o las métricas.</p>
+            <p>El proyecto que hace la vida más fácil: mejor DX, productividad disparada o métricas que hablan por sí solas.</p>
           </article>
           <article class="bn-tile bn-tile--prize reveal">
             <svg class="bn-prize__icon" viewBox="0 0 60 52" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" aria-hidden="true">
@@ -254,12 +255,12 @@
               <p class="faq-group__eyebrow"><span class="faq-group__no">01</span><span class="faq-group__line" aria-hidden="true"></span>Registro</p>
               <div class="faq-qa">
                 <h3>¿Cómo me inscribo?</h3>
-                <p>Rellena el formulario de inscripción. Te llevará un minuto y reservarás tu plaza.</p>
+                <p>Un minuto y listo. Rellena el formulario para reservar tu plaza.</p>
                 <a class="btn btn--primary btn--sm" href="https://forms.office.com/e/UhEibitkPr" target="_blank" rel="noopener">Ir al formulario</a>
               </div>
               <div class="faq-qa">
                 <h3>¿Cuál es la fecha límite?</h3>
-                <p>El plazo se cierra el <strong>23 de junio a las 23:00 h</strong>. No lo dejes para el último momento.</p>
+                <p>El plazo cierra el <strong>23 de junio a las 23:00 h</strong>. ¡Date prisa!</p>
               </div>
               <div class="faq-qa">
                 <h3>¿Y si se superan las plazas?</h3>
@@ -271,11 +272,11 @@
               <p class="faq-group__eyebrow"><span class="faq-group__no">02</span><span class="faq-group__line" aria-hidden="true"></span>Equipos</p>
               <div class="faq-qa">
                 <h3>¿Cuántas personas forman un equipo?</h3>
-                <p>Hasta 5 personas por equipo. También puedes participar en solitario si lo prefieres.</p>
+                <p>De 1 a 5 personas. Solo, en pareja o con todo el squad. Tú decides.</p>
               </div>
               <div class="faq-qa">
                 <h3>¿Puedo participar si no tengo equipo?</h3>
-                <p>¡Claro! Apúntate igualmente: te ayudamos a encontrar equipo durante el evento para que nadie se quede sin construir.</p>
+                <p>¡Claro! Apúntate igualmente. Durante el evento, hacemos matching para que nadie se quede sin equipo.</p>
               </div>
             </article>
 
@@ -287,11 +288,11 @@
               </div>
               <div class="faq-qa">
                 <h3>¿Dónde envío mi proyecto?</h3>
-                <p>Recibirás las instrucciones de entrega al inicio del evento, junto con el canal donde subir tu proyecto.</p>
+                <p>Te lo explicamos en el kick-off del evento. Recibirás el canal de entrega nada más empezar.</p>
               </div>
               <div class="faq-qa">
                 <h3>¿Cuál es la hora límite de entrega?</h3>
-                <p>El cierre de entregas es el <strong>26 de junio a las 10:30</strong>. Después, ¡a presentar!</p>
+                <p>El cierre de entregas es el <strong>26 de junio a las 10:30 h</strong>. Después, ¡toca defender lo que has construido!</p>
               </div>
               <div class="faq-qa">
                 <h3>¿Cuánto tiempo tenemos para presentar?</h3>
@@ -303,11 +304,11 @@
               <p class="faq-group__eyebrow"><span class="faq-group__no">04</span><span class="faq-group__line" aria-hidden="true"></span>Logística</p>
               <div class="faq-qa">
                 <h3>¿Qué necesito llevar?</h3>
-                <p>Tu portátil, cargador y muchas ganas. Si vienes presencialmente, no te olvides de tu acreditación para el Distrito Telefónica.</p>
+                <p>Tu portátil, el cargador y las ideas que lleves rondando desde hace semanas. Si vienes presencial, trae también tu acreditación de Distrito Telefónica.</p>
               </div>
               <div class="faq-qa">
                 <h3>¿Habrá comida y bebida?</h3>
-                <p>Sí. Habrá networking y pizzas 🍕 la tarde del 25, además de avituallamiento para aguantar las 24 horas a pleno rendimiento.</p>
+                <p>¡Sí! Las pizzas 🍕 mientras hacemos networking son un must la tarde del 25 de junio. Además, habrá cafés y snacks el resto del tiempo para llegar con las pilas bien cargadas al día siguiente.</p>
               </div>
             </article>
           </div>
@@ -321,7 +322,7 @@
   <footer class="footer" id="footer">
     <div class="container footer__inner">
       <img src="assets/logo-equinox-white.png" alt="Equinox" class="footer__logo" width="200" height="26" loading="lazy" decoding="async">
-      <p class="footer__claim">¿Listo para construir? Nos vemos los 25 y 26 de junio.</p>
+      <p class="footer__claim">¿Tienes una idea? Traétela. Nos vemos el 25 y 26 de junio.</p>
       <a class="btn btn--primary" href="https://forms.office.com/e/UhEibitkPr" target="_blank" rel="noopener">Inscríbete ahora</a>
       <p class="footer__meta">© 2026 Telefónica Innovación Digital, S.L. Todos los derechos reservados</p>
     </div>
