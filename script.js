@@ -105,6 +105,8 @@
       } else {
         header.classList.remove("is-hidden");
       }
+      // Marca si el header está sobre el hero (lo usa el logo "collapse" en móvil)
+      header.classList.toggle("is-hero", heroVisible);
     }
 
     var headerIO = new IntersectionObserver(function (entries) {
