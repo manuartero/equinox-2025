@@ -805,10 +805,27 @@ h3 { font-weight: 700; }
   width: auto;
   color: var(--ink);
   margin-bottom: 6px;
+  align-self: flex-start;
 }
 .bn-tile--prize.bn-tile--lg .bn-prize__icon {
   height: clamp(130px, 18vw, 220px);
   color: var(--orange);
+}
+
+/* Card destacada de «Number One»: fondo cósmico con texto claro */
+.bn-tile--hero {
+  background:
+    linear-gradient(rgba(13, 12, 29, .55), rgba(13, 12, 29, .8)),
+    #15142d url("assets/price-bg.png") center center / cover no-repeat;
+  border-color: rgba(255, 255, 255, .12);
+  color: #f5f5f7;
+}
+.bn-tile--hero h3 { color: #fff; }
+.bn-tile--hero p { color: #d6d5e2; }
+@media (hover: hover) {
+  .bn-tile--hero:hover {
+    border-color: rgba(243, 146, 0, .6);
+  }
 }
 
 /* ============================================================
@@ -881,9 +898,6 @@ h3 { font-weight: 700; }
   gap: clamp(40px, 6vw, 72px);
 }
 .faq-group { scroll-margin-top: 96px; }
-/* Modo pestañas: solo se ve el grupo activo (sin JS se ven todos) */
-.faq-content.is-tabs .faq-group { display: none; }
-.faq-content.is-tabs .faq-group.is-active { display: block; }
 .faq-group__eyebrow {
   display: flex;
   align-items: center;
